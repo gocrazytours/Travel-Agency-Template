@@ -153,6 +153,12 @@ header {
     flex-direction: column;
     gap: 10px;
   }
+  .tour-cards {
+    flex-direction: column;
+  }
+  .tour-card {
+    max-width: 100%;
+  }
 }
 
 /* Section: All Trips & Treks */
@@ -222,19 +228,24 @@ header {
 }
 .tour-cards {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  gap: 2rem;
+  align-items: stretch; /* ✅ ensures equal height */
 }
+
 .tour-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 300px;
+  max-width: 48%;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   overflow: hidden;
-  width: 100%;
-  max-width: 500px;
   transition: transform 0.3s ease;
 }
+
 .tour-card:hover {
   transform: scale(1.02);
 }
@@ -245,6 +256,7 @@ header {
 }
 .tour-info {
   padding: 1rem;
+  flex-grow: 1;
 }
 .tour-info h4 {
   margin: 0 0 0.5rem;
@@ -304,4 +316,3 @@ header {
 .btn:hover {
   opacity: 0.9;
 }
-
