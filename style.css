@@ -1,11 +1,11 @@
-/* Reset margin, padding and set box-sizing for all elements */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Set base font and background for body and html */
+/* Body and base colors */
 body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
@@ -14,7 +14,7 @@ body, html {
   color: #fff; /* White text */
 }
 
-/* Top bar styling - red background with white text, flex container */
+/* Top Bar */
 .top-bar {
   background-color: #c1121f; /* Brand red */
   color: white;
@@ -24,29 +24,28 @@ body, html {
   font-size: 14px;
 }
 
-/* Left and right sections inside top bar with flex and spacing */
-.top-bar .left, .top-bar .right {
+.top-bar .left,
+.top-bar .right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Links inside top bar are white and underlined */
 .top-bar a {
   color: #fff;
   text-decoration: underline;
 }
 
-/* Header styling: dark background, padding, flex for layout */
+/* Header */
 header {
-  background-color: #1c1d22; /* Matches body background */
+  background-color: #1c1d22;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Logo container with spacing and bold white text */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -56,42 +55,60 @@ header {
   font-weight: bold;
 }
 
-/* Navigation links container with horizontal spacing */
+/* Navigation */
 .nav {
   display: flex;
   gap: 20px;
   color: #ffffff;
 }
 
-/* Search box styling: white background, rounded edges, padding */
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: #c1121f;
+}
+
+/* Search box */
 .search-box {
-  background: #fff;
+  background: #fff; /* White background */
   border-radius: 30px;
   padding: 5px 15px;
   display: flex;
   align-items: center;
-  color: #1c1d22; /* Dark text inside search */
+  color: #1c1d22; /* Text inside search box container (icon) */
 }
 
-/* Search input field styling: no border, no outline, padding */
 .search-box input {
   border: none;
   outline: none;
   padding: 10px;
-  color: #1c1d22; /* Matches search box text color */
+  width: 200px;
+  background-color: transparent; /* Transparent so white container bg shows */
+  color: #1c1d22; /* Dark text */
+  font-weight: 600;
 }
 
-/* Hero section with full viewport height and background image */
-.hero {
-  background: url('https://i.ibb.co/39kF8hT9/mesut-kaya-e-Ocyhe5-9s-Q-unsplash.jpg') no-repeat center center/cover;
-  height: 100vh; /* Full screen height */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white; /* Text color */
+/* Search icon color */
+.search-box i {
+  color: #1c1d22;
+  margin-left: 8px;
 }
+
+/* Placeholder color */
+.search-box input::placeholder {
+  color: #555;
+}
+
+/* Autofill fixes for Chrome (white background + dark text) */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #1c1d22 !important;
+}
+
 
 /* Content inside hero with padding and semi-transparent background */
 .hero-content {
