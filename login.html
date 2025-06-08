@@ -2,27 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login | Go Crazy Tours</title>
   <link rel="stylesheet" href="login.css" />
 </head>
 <body>
   <div class="login-container">
-    <div class="login-box">
-      <h2>Login to Go Crazy Tours</h2>
-      <form action="#" method="post" class="login-form">
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="Enter your email" required />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required />
-        </div>
-        <button type="submit" class="login-btn">Login</button>
-        <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
-      </form>
+    <div class="tab-buttons">
+      <button id="login-tab" type="button" class="active">Login</button>
+      <button id="signup-tab" type="button">Sign Up</button>
     </div>
+
+    <!-- Login Form -->
+    <form id="login-form" class="active" action="#" method="post">
+      <div class="form-group">
+        <label for="login-email">Email address</label>
+        <input type="email" id="login-email" name="login-email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="login-password" placeholder="Enter your password" required />
+      </div>
+      <button type="submit">Login</button>
+      <p class="signup-link">Don't have an account? <a href="#" id="to-signup">Sign up</a></p>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form id="signup-form" action="#" method="post">
+      <div class="form-group">
+        <label for="signup-name">Full Name</label>
+        <input type="text" id="signup-name" name="signup-name" placeholder="Enter your full name" required />
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email address</label>
+        <input type="email" id="signup-email" name="signup-email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" name="signup-password" placeholder="Create a password" required />
+      </div>
+      <button type="submit">Sign Up</button>
+      <p id="signup-message" class="message"></p>
+      <p class="signup-link">Already have an account? <a href="#" id="to-login">Login</a></p>
+    </form>
   </div>
+
+  <script src="login.js"></script>
 </body>
 </html>
