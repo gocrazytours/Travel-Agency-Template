@@ -1,0 +1,288 @@
+<!-- Footer Component -->
+<footer class="footer">
+  <div class="footer__container container">
+    <!-- Footer Grid -->
+    <div class="footer__grid grid grid-cols-1 grid-cols-2-md grid-cols-4-lg">
+      
+      <!-- Company Info -->
+      <div class="footer__section">
+        <h3 class="footer__heading">About Go Crazy Tours</h3>
+        <p class="footer__text">
+          Your trusted travel companion for unforgettable journeys across India and beyond.
+        </p>
+        <div class="footer__socials">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer__section">
+        <h4 class="footer__heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pages/destinations/">Destinations</a></li>
+          <li><a href="/pages/about/">About Us</a></li>
+          <li><a href="/pages/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Popular Destinations -->
+      <div class="footer__section">
+        <h4 class="footer__heading">Popular Destinations</h4>
+        <ul class="footer__links">
+          <li><a href="/pages/destinations/kerala">Kerala</a></li>
+          <li><a href="/pages/destinations/manali">Manali</a></li>
+          <li><a href="/pages/rajasthan/">Rajasthan</a></li>
+          <li><a href="/pages/destinations/goa">Goa</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer__section">
+        <h4 class="footer__heading">Contact Us</h4>
+        <div class="footer__contact">
+          <p>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+917795644XXX">(+91) 77956 44XXX</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@gocrazytours.com">info@gocrazytours.com</a>
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>India</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">
+        &copy; 2024 Go Crazy Tours. All rights reserved.
+      </p>
+      <div class="footer__legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms & Conditions</a>
+        <a href="/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Button -->
+  <a class="footer__whatsapp" href="https://wa.me/917795644XXX" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</footer>
+
+<style>
+/* Footer Styles */
+.footer {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-light);
+  padding: var(--spacing-16) var(--spacing-6);
+  margin-top: auto;
+  position: relative;
+}
+
+.footer__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-12);
+}
+
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.footer__heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-2);
+}
+
+.footer__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+/* Social Links */
+.footer__socials {
+  display: flex;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.footer__socials a {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: all var(--transition-duration-fast);
+}
+
+.footer__socials a:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-3px);
+}
+
+/* Footer Links */
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.footer__links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: color var(--transition-duration-fast);
+}
+
+.footer__links a:hover {
+  color: var(--color-primary);
+}
+
+/* Contact Info */
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.footer__contact p {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.footer__contact i {
+  color: var(--color-primary);
+  width: 20px;
+}
+
+.footer__contact a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.footer__contact a:hover {
+  color: var(--color-primary);
+}
+
+/* Footer Bottom */
+.footer__bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.footer__copyright {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.footer__legal {
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+.footer__legal a {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-duration-fast);
+}
+
+.footer__legal a:hover {
+  color: var(--color-primary);
+}
+
+/* WhatsApp Button */
+.footer__whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-size: var(--font-size-2xl);
+  text-decoration: none;
+  z-index: var(--z-fixed);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-duration-fast);
+}
+
+.footer__whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--spacing-12) var(--spacing-4);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__whatsapp {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: var(--font-size-xl);
+  }
+}
+</style>

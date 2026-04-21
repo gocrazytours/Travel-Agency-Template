@@ -1,0 +1,36 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Kerala",
+      "description": "The God's Own Country — Beautiful backwaters, hill stations & beaches.",
+      "image": "https://i.ibb.co/jP6NH5bQ/nature-photographer-29ez-CWt-Mtn-M-unsplash.jpg",
+      "toursCount": 12,
+      "slug": "kerala"
+    },
+    {
+      "id": 2,
+      "name": "Manali",
+      "description": "Mountain adventure with snow-capped peaks and serene valleys.",
+      "image": "https://i.ibb.co/fGXQmQg2/The-Best-Adventure-Experiences-in-Manali1-popular.jpg",
+      "toursCount": 8,
+      "slug": "manali"
+    },
+    {
+      "id": 3,
+      "name": "Rajasthan",
+      "description": "Experience the royal heritage and vibrant culture of the desert state.",
+      "image": "https://i.ibb.co/dest3.jpg",
+      "toursCount": 15,
+      "slug": "rajasthan"
+    },
+    {
+      "id": 4,
+      "name": "Goa",
+      "description": "Enjoy pristine beaches, water sports, and Portuguese heritage.",
+      "image": "https://i.ibb.co/dest4.jpg",
+      "toursCount": 10,
+      "slug": "goa"
+    }
+  ]
+}
