@@ -1,0 +1,27 @@
+{
+  "site": {
+    "name": "Go Crazy Tours",
+    "description": "Your trusted travel companion for unforgettable journeys",
+    "url": "https://gocrazytours.com",
+    "email": "info@gocrazytours.com",
+    "phone": "+91 7795644XXX",
+    "address": "India"
+  },
+  "social": {
+    "facebook": "https://facebook.com",
+    "instagram": "https://instagram.com",
+    "twitter": "https://twitter.com",
+    "youtube": "https://youtube.com",
+    "whatsapp": "https://wa.me/917795644XXX"
+  },
+  "api": {
+    "baseUrl": "https://api.gocrazytours.com/v1",
+    "timeout": 30000
+  },
+  "features": {
+    "enableBooking": true,
+    "enableReviews": true,
+    "enableWishlist": true,
+    "enableNotifications": true
+  }
+}

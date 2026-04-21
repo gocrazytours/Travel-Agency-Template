@@ -1,0 +1,43 @@
+{
+  "tours": [
+    {
+      "id": 1,
+      "title": "Thailand Adventure",
+      "location": "Bengaluru - Thailand",
+      "duration": "5 Days / 4 Nights",
+      "originalPrice": 56999,
+      "currentPrice": 54999,
+      "image": "https://i.ibb.co/VW1Sx9p7/pexels-erik-karits-2093459-3732494.jpg",
+      "tag": "With Flight",
+      "seatsTotal": 32,
+      "seatsLeft": 10,
+      "description": "Experience the vibrant culture and stunning landscapes of Thailand"
+    },
+    {
+      "id": 2,
+      "title": "Kerala Backwaters",
+      "location": "Kochi - Kerala",
+      "duration": "4 Days / 3 Nights",
+      "originalPrice": 28999,
+      "currentPrice": 24999,
+      "image": "https://i.ibb.co/jP6NH5bQ/nature-photographer-29ez-CWt-Mtn-M-unsplash.jpg",
+      "tag": "Popular",
+      "seatsTotal": 25,
+      "seatsLeft": 8,
+      "description": "Explore the serene backwaters and beaches of Kerala"
+    },
+    {
+      "id": 3,
+      "title": "Manali Trek",
+      "location": "Delhi - Manali",
+      "duration": "3 Days / 2 Nights",
+      "originalPrice": 18999,
+      "currentPrice": 16999,
+      "image": "https://i.ibb.co/fGXQmQg2/The-Best-Adventure-Experiences-in-Manali1-popular.jpg",
+      "tag": "Trek",
+      "seatsTotal": 20,
+      "seatsLeft": 5,
+      "description": "Adventure through the mountains of Himachal Pradesh"
+    }
+  ]
+}

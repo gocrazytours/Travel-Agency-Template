@@ -1,0 +1,326 @@
+/* ============================================
+   RESPONSIVE - Mobile-First Media Queries
+   ============================================ */
+
+/* ========== MOBILE FIRST (Base Styles) ========== */
+/* Styles are mobile-optimized by default */
+
+/* ========== SMALL DEVICES ========== */
+/* 640px and up */
+@media (min-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+
+  .container {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+  }
+
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  /* Grid adjustments */
+  .grid-cols-2-sm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Display adjustments */
+  .hidden-sm {
+    display: none;
+  }
+
+  .visible-sm {
+    display: block;
+  }
+}
+
+/* ========== TABLETS ========== */
+/* 768px and up */
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+
+  h1 {
+    font-size: var(--font-size-5xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-4xl);
+  }
+
+  p {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Grid adjustments */
+  .grid-cols-2-md {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-3-md {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Display adjustments */
+  .hidden-md {
+    display: none;
+  }
+
+  .visible-md {
+    display: block;
+  }
+
+  /* Navbar adjustments */
+  nav {
+    display: flex;
+    gap: var(--spacing-8);
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Spacing adjustments */
+  .px-4-md {
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+  }
+
+  .py-6-md {
+    padding-top: var(--spacing-6);
+    padding-bottom: var(--spacing-6);
+  }
+}
+
+/* ========== DESKTOPS ========== */
+/* 1024px and up */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 980px;
+  }
+
+  /* Grid adjustments */
+  .grid-cols-3-lg {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-cols-4-lg {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-12-lg {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  /* Display adjustments */
+  .hidden-lg {
+    display: none;
+  }
+
+  .visible-lg {
+    display: block;
+  }
+
+  /* Two-column layout */
+  .two-col-lg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-8);
+  }
+
+  /* Sidebar layout */
+  .sidebar-lg {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+/* ========== LARGE DESKTOPS ========== */
+/* 1280px and up */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  /* Display adjustments */
+  .hidden-xl {
+    display: none;
+  }
+
+  .visible-xl {
+    display: block;
+  }
+}
+
+/* ========== EXTRA LARGE SCREENS ========== */
+/* 1536px and up */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  /* Display adjustments */
+  .hidden-2xl {
+    display: none;
+  }
+
+  .visible-2xl {
+    display: block;
+  }
+}
+
+/* ========== LANDSCAPE MODE ========== */
+@media (orientation: landscape) {
+  .full-height-landscape {
+    height: 100vh;
+  }
+}
+
+/* ========== PORTRAIT MODE ========== */
+@media (orientation: portrait) {
+  .full-height-portrait {
+    height: 100vh;
+  }
+}
+
+/* ========== TOUCH DEVICES ========== */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch target size */
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"] {
+    padding: var(--spacing-4) var(--spacing-6);
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects */
+  a:hover {
+    color: inherit;
+  }
+
+  button:hover {
+    background-color: inherit;
+  }
+}
+
+/* ========== NO HOVER DEVICES ========== */
+@media (hover: none) {
+  .hover-only {
+    display: none;
+  }
+}
+
+/* ========== RETINA/HIGH DPI DISPLAYS ========== */
+@media (min-device-pixel-ratio: 2) {
+  img {
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  p {
+    page-break-inside: avoid;
+  }
+
+  .no-print {
+    display: none;
+  }
+}
+
+/* ========== DARK MODE PREFERENCE ========== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: var(--color-dark-secondary);
+    color: var(--color-text-light);
+  }
+}
+
+/* ========== LIGHT MODE PREFERENCE ========== */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--color-light-bg);
+    color: var(--color-text-dark);
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: var(--color-light-bg);
+    color: var(--color-text-dark);
+  }
+}
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========== HIGH CONTRAST MODE ========== */
+@media (prefers-contrast: more) {
+  * {
+    border-width: 2px;
+  }
+
+  button,
+  a {
+    text-decoration: underline;
+  }
+}
