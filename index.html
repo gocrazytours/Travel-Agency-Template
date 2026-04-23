@@ -11,7 +11,7 @@
   <div class="top-bar">
     <div class="left">
 
-      <span><i class="fas fa-envelope"></i> info@gocrazytours.com</span>
+      <a href="mailto:info@gocrazytours.com"><i class="fas fa-envelope"></i> info@gocrazytours.com</a>
     </div>
     <div class="right">
       <span>Follow Us:</span>
@@ -24,7 +24,7 @@
   <header>
     <div class="logo">
       <img src="/public/assets/images/logo/go_crazy_tours_logo_horizontal.png" alt="Go Crazy Tours Logo" />
-      Go Crazy Tours
+      <span class="logo__text">Go Crazy Tours</span>
     </div>
     <div class="search-box">
       <input type="text" placeholder="Search for 'Destination'" />
@@ -32,9 +32,30 @@
     </div>
     <nav class="header__nav nav" aria-label="Main navigation">
       <a href="index.html" class="nav__link nav__link--active">Home</a>
-      <a href="destination/index.html" class="nav__link">Destinations</a>
-      <a href="category/index.html" class="nav__link">Categories</a>
-      <a href="#" class="nav__link">About Us</a>
+      <div class="nav__dropdown">
+        <a href="destination/index.html" class="nav__link nav__dropdown-toggle">Destinations <i class="fas fa-chevron-down"></i></a>
+        <div class="nav__dropdown-menu">
+          <a href="destination/manali.html" class="nav__dropdown-item">Manali</a>
+          <a href="destination/ladakh.html" class="nav__dropdown-item">Ladakh</a>
+          <a href="destination/bali.html" class="nav__dropdown-item">Bali</a>
+          <a href="destination/maldives.html" class="nav__dropdown-item">Maldives</a>
+          <a href="destination/goa.html" class="nav__dropdown-item">Goa</a>
+          <a href="destination/kerala.html" class="nav__dropdown-item">Kerala</a>
+          <a href="destination/rajasthan.html" class="nav__dropdown-item">Rajasthan</a>
+          <a href="destination/thailand.html" class="nav__dropdown-item">Thailand</a>
+        </div>
+      </div>
+      <div class="nav__dropdown">
+        <a href="category/index.html" class="nav__link nav__dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+        <div class="nav__dropdown-menu">
+          <a href="holiday-packages.html" class="nav__dropdown-item">Holiday Packages</a>
+          <a href="honeymoon-packages.html" class="nav__dropdown-item">Honeymoon Packages</a>
+          <a href="pilgrimage-tours.html" class="nav__dropdown-item">Pilgrimage Tours</a>
+          <a href="adventure-tours.html" class="nav__dropdown-item">Adventure Tours</a>
+          <a href="customised-packages.html" class="nav__dropdown-item">Customised Packages</a>
+        </div>
+      </div>
+      <a href="#about" class="nav__link">About Us</a>
       <button type="button" class="header__hamburger hamburger-menu" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
@@ -46,13 +67,47 @@
   <a href="index.html" class="mobile-nav__link">
     <i class="fas fa-home"></i> Home
   </a>
-  <a href="destination/index.html" class="mobile-nav__link">
-    <i class="fas fa-map-marker-alt"></i> Destinations
-  </a>
-  <a href="category/index.html" class="mobile-nav__link">
-    <i class="fas fa-th-large"></i> Categories
-  </a>
-  <a href="#" class="mobile-nav__link">
+
+  <div class="mobile-nav__dropdown">
+    <div class="mobile-nav__dropdown-header">
+      <a href="destination/index.html" class="mobile-nav__link">
+        <i class="fas fa-map-marker-alt"></i> Destinations
+      </a>
+      <button class="mobile-nav__chevron" aria-label="Toggle destinations">
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="mobile-nav__dropdown-menu">
+      <a href="destination/manali.html" class="mobile-nav__dropdown-item">Manali</a>
+      <a href="destination/ladakh.html" class="mobile-nav__dropdown-item">Ladakh</a>
+      <a href="destination/bali.html" class="mobile-nav__dropdown-item">Bali</a>
+      <a href="destination/maldives.html" class="mobile-nav__dropdown-item">Maldives</a>
+      <a href="destination/goa.html" class="mobile-nav__dropdown-item">Goa</a>
+      <a href="destination/kerala.html" class="mobile-nav__dropdown-item">Kerala</a>
+      <a href="destination/rajasthan.html" class="mobile-nav__dropdown-item">Rajasthan</a>
+      <a href="destination/thailand.html" class="mobile-nav__dropdown-item">Thailand</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav__dropdown">
+    <div class="mobile-nav__dropdown-header">
+      <a href="category/index.html" class="mobile-nav__link">
+        <i class="fas fa-th-large"></i> Categories
+      </a>
+      <button class="mobile-nav__chevron" aria-label="Toggle categories">
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="mobile-nav__dropdown-menu">
+      <a href="holiday-packages.html" class="mobile-nav__dropdown-item">Holiday Packages</a>
+      <a href="honeymoon-packages.html" class="mobile-nav__dropdown-item">Honeymoon Packages</a>
+      <a href="pilgrimage-tours.html" class="mobile-nav__dropdown-item">Pilgrimage Tours</a>
+      <a href="adventure-tours.html" class="mobile-nav__dropdown-item">Adventure Tours</a>
+      <a href="customised-packages.html" class="mobile-nav__dropdown-item">Customised Packages</a>
+    </div>
+  </div>
+
+  <a href="#about" class="mobile-nav__link">
     <i class="fas fa-info-circle"></i> About Us
   </a>
 </div>
@@ -78,16 +133,38 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-<!-- Section: All Trips and All Treks -->
+<!-- Section: Our Categories -->
 <section class="trip-options">
-  <a href="trips.html" class="trip-card">
-    <img src="https://i.ibb.co/DDF6j8MX/felix-rostig-Um-V2wr-Vbq8-unsplash.jpg" alt="All Trips" />
-    <div class="trip-label">All Trips <i class="fas fa-arrow-circle-right"></i></div>
-  </a>
-  <a href="treks.html" class="trip-card">
-    <img src="https://i.ibb.co/j957XX3L/pexels-hoover-tung-153639-1980877.jpg" alt="All Treks" />
-    <div class="trip-label">All Treks <i class="fas fa-arrow-circle-right"></i></div>
-  </a>
+  <div class="slider-container">
+    <div class="slider-wrapper">
+      <a href="holiday-packages.html" class="trip-card">
+        <img src="public/assets/images/destinations/holiday-tour.jpeg" alt="Holiday Packages" />
+        <div class="trip-label">Holiday Packages <i class="fas fa-arrow-circle-right"></i></div>
+      </a>
+      <a href="honeymoon-packages.html" class="trip-card">
+        <img src="public/assets/images/destinations/honeymoon-bridge.jpeg" alt="Honeymoon Packages" />
+        <div class="trip-label">Honeymoon Packages <i class="fas fa-arrow-circle-right"></i></div>
+      </a>
+      <a href="pilgrimage-tours.html" class="trip-card">
+        <img src="public/assets/images/destinations/pilgrimage-temple.jpeg" alt="Pilgrimage Tours" />
+        <div class="trip-label">Pilgrimage Tours <i class="fas fa-arrow-circle-right"></i></div>
+      </a>
+      <a href="adventure-tours.html" class="trip-card">
+        <img src="public/assets/images/destinations/adventure-tour.jpeg" alt="Adventure Tours" />
+        <div class="trip-label">Adventure Tours <i class="fas fa-arrow-circle-right"></i></div>
+      </a>
+      <a href="customised-packages.html" class="trip-card">
+        <img src="https://i.ibb.co/MyX5j081/meric-dagli-u-ADXI1v10us-unsplash.jpg" alt="Customised Packages" />
+        <div class="trip-label">Customised Packages <i class="fas fa-arrow-circle-right"></i></div>
+      </a>
+    </div>
+    <button class="slider-btn prev-btn" aria-label="Previous">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="slider-btn next-btn" aria-label="Next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 </section>
 
 <!-- Section: Upcoming Tours -->
@@ -99,9 +176,8 @@
 
   <div class="tour-cards">
 
-    <!-- Card 1: With Flight -->
+    <!-- Card 1: Thailand -->
     <div class="tour-card">
-      <span class="tag flight"><i class="fas fa-plane"></i> With Flight</span>
       <img src="https://i.ibb.co/VW1Sx9p7/pexels-erik-karits-2093459-3732494.jpg" alt="Thailand" />
       <div class="tour-info">
         <h4>Thailand</h4>
@@ -116,9 +192,8 @@
       </div>
     </div>
 
-    <!-- Card 2: With Local Transport -->
+    <!-- Card 2: Kudremukh Trek -->
     <div class="tour-card">
-      <span class="tag local"><i class="fas fa-bus"></i> With Local Transport</span>
       <img src="https://i.ibb.co/TDQDzf3Y/pexels-taosif-jamal-424987993-15172763.jpg" alt="NISHANI MOTTE Trek" />
       <div class="tour-info">
         <h4>kudremukh trek</h4>
@@ -193,7 +268,7 @@
 </section>
 
 <!-- Footer Section -->
-<section class="site-footer">
+<section class="site-footer" id="about">
   <hr class="footer-divider" />
 
   <div class="footer-content">
@@ -204,7 +279,8 @@
         We are a tour operator from Bengaluru. We operate treks, domestic tours, international tours, and holiday packages.
       </p>
       <ul class="contact-info">
-        <li><i class="fas fa-envelope"></i> info@gocrazytours.com</li>
+        <li><a href="tel:+917795644XXX"><i class="fas fa-phone"></i> (+91) 77956 44XXX</a></li>
+        <li><a href="mailto:info@gocrazytours.com"><i class="fas fa-envelope"></i> info@gocrazytours.com</a></li>
         <li><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</li>
       </ul>
     </div>
@@ -214,8 +290,11 @@
       <h4>Quick Links</h4>
       <ul>
         <li><span class="dash">–</span> <a href="#">Home</a></li>
-        <li><span class="dash">–</span> <a href="#">All Trips</a></li>
-        <li><span class="dash">–</span> <a href="#">All Treks</a></li>
+        <li><span class="dash">–</span> <a href="holiday-packages.html">Holiday Packages</a></li>
+        <li><span class="dash">–</span> <a href="honeymoon-packages.html">Honeymoon Packages</a></li>
+        <li><span class="dash">–</span> <a href="pilgrimage-tours.html">Pilgrimage Tours</a></li>
+        <li><span class="dash">–</span> <a href="adventure-tours.html">Adventure Tours</a></li>
+        <li><span class="dash">–</span> <a href="customised-packages.html">Customised Packages</a></li>
         <li><span class="dash">–</span> <a href="#">Upcoming Tours</a></li>
       </ul>
     </div>
@@ -284,6 +363,70 @@
       }
     });
   }
+
+  // Mobile dropdown chevron toggles
+  document.querySelectorAll('.mobile-nav__chevron').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdown = this.closest('.mobile-nav__dropdown');
+      const isOpen = dropdown.classList.toggle('open');
+      this.querySelector('i').style.transform = isOpen ? 'rotate(180deg)' : '';
+      // Close siblings
+      document.querySelectorAll('.mobile-nav__dropdown').forEach(d => {
+        if (d !== dropdown) {
+          d.classList.remove('open');
+          d.querySelector('.mobile-nav__chevron i').style.transform = '';
+        }
+      });
+    });
+  });
+
+  // Category Slider Functionality
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const cards = sliderWrapper ? Array.from(sliderWrapper.children) : [];
+  const cardGap = 16;
+  
+  function getCardWidth() {
+    const card = sliderWrapper.querySelector('.trip-card');
+    return card ? card.offsetWidth + cardGap : 266;
+  }
+  
+  function slideNext() {
+    const slideDistance = -getCardWidth();
+    sliderWrapper.style.transition = 'transform 0.5s ease';
+    sliderWrapper.style.transform = `translateX(${slideDistance}px)`;
+
+    const onTransitionEnd = () => {
+      sliderWrapper.style.transition = 'none';
+      sliderWrapper.appendChild(sliderWrapper.firstElementChild);
+      sliderWrapper.style.transform = 'translateX(0)';
+      sliderWrapper.removeEventListener('transitionend', onTransitionEnd);
+    };
+
+    sliderWrapper.addEventListener('transitionend', onTransitionEnd);
+  }
+
+  function slidePrev() {
+    const lastCard = sliderWrapper.lastElementChild;
+    sliderWrapper.insertBefore(lastCard, sliderWrapper.firstElementChild);
+    sliderWrapper.style.transition = 'none';
+    sliderWrapper.style.transform = `translateX(-${getCardWidth()}px)`;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        sliderWrapper.style.transition = 'transform 0.5s ease';
+        sliderWrapper.style.transform = 'translateX(0)';
+      });
+    });
+  }
+
+  if (prevBtn && nextBtn && sliderWrapper) {
+    prevBtn.addEventListener('click', slidePrev);
+    nextBtn.addEventListener('click', slideNext);
+  }
+
 </script>
 </body>
 </html>
