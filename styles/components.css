@@ -175,3 +175,49 @@
 .bg-primary { background-color: var(--color-primary); }
 .bg-dark { background-color: var(--color-dark-bg); }
 .bg-light { background-color: var(--color-light-bg); }
+
+/* Search Box Component - Global Styles */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-light-bg);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-1) var(--spacing-4);
+  gap: var(--spacing-2);
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: var(--spacing-2) var(--spacing-3);
+  flex: 1;
+  background-color: transparent;
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+}
+
+.search-box input::placeholder {
+  color: var(--color-text-muted-dark);
+}
+
+.search-box i {
+  color: var(--color-text-dark);
+  margin-left: var(--spacing-2);
+}
+
+/* Autofill styling for browsers */
+.search-box input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-light-bg) inset !important;
+  -webkit-text-fill-color: var(--color-text-dark) !important;
+}
+
+/* Responsive: Full width on mobile */
+@media (max-width: 768px) {
+  .search-box {
+    max-width: none;
+    width: 100%;
+  }
+}

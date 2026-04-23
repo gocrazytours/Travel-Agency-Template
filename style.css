@@ -21,24 +21,45 @@ body, html {
 
 /* Top Bar */
 .top-bar {
-  background-color: #c1121f; /* Brand red */
+  background-color: #c1121f;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 14px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .top-bar .left,
 .top-bar .right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
 }
 
 .top-bar a {
   color: #fff;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    font-size: 12px;
+    padding: 6px 14px;
+    gap: 4px;
+  }
+
+  .top-bar .left,
+  .top-bar .right {
+    gap: 10px;
+  }
+
+  /* Hide email on very small screens to avoid overflow */
+  .top-bar .left span {
+    display: none;
+  }
 }
 
 /* Header */
@@ -60,6 +81,11 @@ header {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
 }
 
 /* Navigation */
@@ -162,44 +188,6 @@ header {
     color: #c1121f;
   }
 }
-
-/* Search box */
-.search-box {
-  background: #fff; /* White background */
-  border-radius: 30px;
-  padding: 5px 15px;
-  display: flex;
-  align-items: center;
-  color: #1c1d22; /* Text inside search box container (icon) */
-}
-
-.search-box input {
-  border: none;
-  outline: none;
-  padding: 10px;
-  width: 200px;
-  background-color: transparent; /* Transparent so white container bg shows */
-  color: #1c1d22; /* Dark text */
-  font-weight: 600;
-}
-
-/* Search icon color */
-.search-box i {
-  color: #1c1d22;
-  margin-left: 8px;
-}
-
-/* Placeholder color */
-.search-box input::placeholder {
-  color: #555;
-}
-
-/* Autofill fixes for Chrome (white background + dark text) */
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px white inset !important;
-  -webkit-text-fill-color: #1c1d22 !important;
-}
-
 
 /* Content inside hero with padding and semi-transparent background */
 .hero-content {
@@ -318,18 +306,26 @@ input:-webkit-autofill {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 12px 20px;
+    padding: 10px 16px;
     gap: 0;
   }
 
   .logo {
     flex: 1;
-    font-size: 18px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .logo img {
-    height: 36px;
+    height: 28px;
     width: auto;
+  }
+
+  .logo__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Search box wraps to second row, full width */
