@@ -10,7 +10,7 @@
 <body>
   <div class="top-bar">
     <div class="left">
-      <span><i class="fas fa-phone"></i> (+91) 77956 44XXX</span>
+
       <span><i class="fas fa-envelope"></i> info@gocrazytours.com</span>
     </div>
     <div class="right">
@@ -30,18 +30,33 @@
       <input type="text" placeholder="Search for 'Destination'" />
       <i class="fas fa-search"></i>
     </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="destination/index.html">Destinations</a>
-      <a href="category/index.html">Categories</a>
-      <a href="#">About Us</a>
-      <i class="fas fa-bars"></i>
+    <nav class="header__nav nav" aria-label="Main navigation">
+      <a href="index.html" class="nav__link nav__link--active">Home</a>
+      <a href="destination/index.html" class="nav__link">Destinations</a>
+      <a href="category/index.html" class="nav__link">Categories</a>
+      <a href="#" class="nav__link">About Us</a>
+      <button type="button" class="header__hamburger hamburger-menu" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
   </header>
-</body>
-</html>
 
-  
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html" class="mobile-nav__link">
+    <i class="fas fa-home"></i> Home
+  </a>
+  <a href="destination/index.html" class="mobile-nav__link">
+    <i class="fas fa-map-marker-alt"></i> Destinations
+  </a>
+  <a href="category/index.html" class="mobile-nav__link">
+    <i class="fas fa-th-large"></i> Categories
+  </a>
+  <a href="#" class="mobile-nav__link">
+    <i class="fas fa-info-circle"></i> About Us
+  </a>
+</div>
+
 <section class="hero">
   <div class="hero-content">
     <h2>WELCOME TO GO CRAZY TOURS</h2>
@@ -62,8 +77,6 @@
   <a class="whatsapp-btn" href="https://wa.me/917795644XXX" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
-</body>
-</html>
 
 <!-- Section: All Trips and All Treks -->
 <section class="trip-options">
@@ -191,7 +204,6 @@
         We are a tour operator from Bengaluru. We operate treks, domestic tours, international tours, and holiday packages.
       </p>
       <ul class="contact-info">
-        <li><i class="fas fa-phone-alt"></i> +91 77956 442XX</li>
         <li><i class="fas fa-envelope"></i> info@gocrazytours.com</li>
         <li><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</li>
       </ul>
@@ -240,6 +252,41 @@
     — <span>All Rights Reserved © <a href="https://gocrazytours.com">gocrazytours.com</a></span>
   </p>
 </div>
+
+<script>
+  const hamburgerBtn = document.querySelector('.hamburger-menu');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
+
+  function closeMobileMenu() {
+    mobileNav.classList.remove('open');
+    const icon = hamburgerBtn.querySelector('i');
+    icon.classList.add('fa-bars');
+    icon.classList.remove('fa-times');
+  }
+
+  if (hamburgerBtn && mobileNav) {
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = mobileNav.classList.toggle('open');
+      const icon = hamburgerBtn.querySelector('i');
+      icon.classList.toggle('fa-bars', !isOpen);
+      icon.classList.toggle('fa-times', isOpen);
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('header') && !e.target.closest('#mobile-nav')) {
+        closeMobileMenu();
+      }
+    });
+  }
+</script>
+</body>
+</html>
 
 
 
