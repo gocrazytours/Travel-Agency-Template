@@ -1,23 +1,24 @@
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 <!-- Top Bar Component -->
 <div class="top-bar">
   <div class="top-bar__left">
-    <span class="top-bar__contact">
-      <i class="fas fa-phone"></i>
-      <a href="tel:+917795644XXX">(+91) 77956 44XXX</a>
-    </span>
     <span class="top-bar__email">
       <i class="fas fa-envelope"></i>
       <a href="mailto:info@gocrazytours.com">info@gocrazytours.com</a>
     </span>
   </div>
   <div class="top-bar__right">
-    <span>Follow Us:</span>
-    <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
-      <i class="fab fa-instagram"></i>
-    </a>
+    <div class="top-bar__social">
+      <span>Follow Us:</span>
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener noreferrer">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
     <a href="login/index.html" class="top-bar__login-btn">Login</a>
   </div>
 </div>
@@ -57,14 +58,14 @@
 <style>
 /* Top Bar Styles */
 .top-bar {
-  background-color: #c1121f;
-  color: #fff;
-  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--spacing-3) var(--spacing-6);
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: calc(var(--font-size-sm) * 0.5);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: var(--spacing-4);
 }
 
 .top-bar__left,
@@ -75,17 +76,24 @@
 }
 
 .top-bar__contact,
-.top-bar__email {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-}
+  .top-bar__email,
+  .top-bar__social {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    flex-wrap: wrap;
+  }
 
-.top-bar__contact a,
-.top-bar__email a {
-  color: var(--color-text-light);
-  text-decoration: none;
-}
+  .top-bar__contact a,
+  .top-bar__email a,
+  .top-bar__social a {
+    color: var(--color-text-light);
+    text-decoration: none;
+  }
+
+  .top-bar__social span {
+    white-space: nowrap;
+  }
 
 .top-bar__contact a:hover,
 .top-bar__email a:hover {
@@ -100,12 +108,35 @@
 @media (max-width: 768px) {
   .top-bar {
     flex-direction: column;
-    font-size: var(--font-size-xs);
+    align-items: stretch;
+    font-size: calc(var(--font-size-xs) * 0.5);
+    gap: var(--spacing-2);
   }
 
   .top-bar__left,
   .top-bar__right {
-    gap: var(--spacing-4);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: var(--spacing-2);
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .top-bar__social,
+  .top-bar__contact,
+  .top-bar__email {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .top-bar__login-btn {
+    font-size: var(--font-size-xs);
+  }
+
+  .top-bar__social {
+    align-items: center;
   }
 }
 
@@ -123,21 +154,22 @@
 .header__logo {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
+  gap: var(--spacing-2);
   color: var(--color-text-light);
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .header__logo-img {
-  height: 25px;
+  height: 30px;
   width: auto;
   max-width: 150px;
 }
 
 .header__brand-name {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
 }
 
@@ -149,20 +181,22 @@
   align-items: center;
   gap: var(--spacing-2);
   min-width: 300px;
+  flex: 1 0 auto;
 }
 
 .header__search-input {
   border: none;
   outline: none;
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-2);
   width: 100%;
   background-color: transparent;
   color: var(--color-text-dark);
   font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
 }
 
 .header__search-input::placeholder {
-  color: #999;
+  color: var(--color-text-muted-dark);
 }
 
 .header__search-btn {
@@ -171,24 +205,34 @@
   color: var(--color-text-dark);
   cursor: pointer;
   font-size: var(--font-size-lg);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.header__search-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .header__nav {
   display: flex;
-  gap: var(--spacing-8);
-  color: var(--color-text-light);
+  gap: var(--spacing-6);
+  align-items: center;
 }
 
 .nav__link {
   color: var(--color-text-light);
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  transition: color var(--transition-duration-fast);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
 }
 
 .nav__link:hover,
 .nav__link--active {
   color: var(--color-primary);
+  background-color: rgba(193, 18, 31, 0.1);
 }
 
 .hamburger-menu {
@@ -198,11 +242,17 @@
   color: var(--color-text-light);
   font-size: var(--font-size-2xl);
   cursor: pointer;
+  padding: var(--spacing-2);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.hamburger-menu:hover {
+  background-color: var(--color-dark-bg-secondary);
 }
 
 @media (max-width: 1024px) {
   .header {
-    flex-wrap: wrap;
     gap: var(--spacing-4);
   }
 
@@ -213,30 +263,67 @@
   }
 }
 
+@media (min-width: 769px) {
+  .header__nav {
+    display: flex !important;
+    position: static !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
     padding: var(--spacing-4);
     gap: var(--spacing-4);
   }
 
+  .header__logo {
+    gap: var(--spacing-1);
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .header__logo-img {
+    height: 24px;
+  }
+
+  .header__brand-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+
   .header__search-box {
     min-width: 100%;
+    order: 3;
+    flex-basis: 100%;
   }
 
   .header__nav {
-    display: none;
-    flex-direction: column;
-    gap: var(--spacing-4);
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--color-dark-secondary);
-    padding: var(--spacing-6);
-    z-index: var(--z-fixed);
+    flex-direction: column;
+    gap: var(--spacing-2);
+    background: var(--color-dark-bg-secondary);
+    padding: var(--spacing-4);
+    border-top: 1px solid var(--color-border);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
   }
 
   .header__nav.active {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
     display: flex;
   }
 
@@ -245,3 +332,43 @@
   }
 }
 </style>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerBtn = document.querySelector('.hamburger-menu');
+    const mobileMenu = document.querySelector('.header__nav');
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    if (!hamburgerBtn || !mobileMenu) {
+      console.warn('Menu elements not found');
+      return;
+    }
+
+    // Toggle menu on hamburger click
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      mobileMenu.classList.toggle('active');
+      console.log('Menu toggled, active:', mobileMenu.classList.contains('active'));
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        console.log('Nav link clicked');
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside the header
+    document.addEventListener('click', function(e) {
+      if (mobileMenu.classList.contains('active') && !e.target.closest('.header')) {
+        mobileMenu.classList.remove('active');
+        console.log('Menu closed (clicked outside)');
+      }
+    });
+
+    console.log('Mobile menu initialized');
+  });
+</script>
