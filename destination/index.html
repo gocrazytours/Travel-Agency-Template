@@ -33,8 +33,29 @@
     </div>
     <nav class="header__nav nav" aria-label="Main navigation">
       <a href="../index.html" class="nav__link">Home</a>
-      <a href="index.html" class="nav__link nav__link--active">Destinations</a>
-      <a href="../category/index.html" class="nav__link">Categories</a>
+      <div class="nav__dropdown">
+        <a href="index.html" class="nav__link nav__dropdown-toggle nav__link--active">Destinations <i class="fas fa-chevron-down"></i></a>
+        <div class="nav__dropdown-menu">
+          <a href="manali.html" class="nav__dropdown-item">Manali</a>
+          <a href="ladakh.html" class="nav__dropdown-item">Ladakh</a>
+          <a href="bali.html" class="nav__dropdown-item">Bali</a>
+          <a href="maldives.html" class="nav__dropdown-item">Maldives</a>
+          <a href="goa.html" class="nav__dropdown-item">Goa</a>
+          <a href="kerala.html" class="nav__dropdown-item">Kerala</a>
+          <a href="rajasthan.html" class="nav__dropdown-item">Rajasthan</a>
+          <a href="thailand.html" class="nav__dropdown-item">Thailand</a>
+        </div>
+      </div>
+      <div class="nav__dropdown">
+        <a href="../category/index.html" class="nav__link nav__dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+        <div class="nav__dropdown-menu">
+          <a href="../holiday-packages.html" class="nav__dropdown-item">Holiday Packages</a>
+          <a href="../honeymoon-packages.html" class="nav__dropdown-item">Honeymoon Packages</a>
+          <a href="../pilgrimage-tours.html" class="nav__dropdown-item">Pilgrimage Tours</a>
+          <a href="../adventure-tours.html" class="nav__dropdown-item">Adventure Tours</a>
+          <a href="../customised-packages.html" class="nav__dropdown-item">Customised Packages</a>
+        </div>
+      </div>
       <a href="../index.html#about" class="nav__link">About Us</a>
       <button type="button" class="header__hamburger hamburger-menu" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -47,12 +68,46 @@
   <a href="../index.html" class="mobile-nav__link">
     <i class="fas fa-home"></i> Home
   </a>
-  <a href="index.html" class="mobile-nav__link">
-    <i class="fas fa-map-marker-alt"></i> Destinations
-  </a>
-  <a href="../category/index.html" class="mobile-nav__link">
-    <i class="fas fa-th-large"></i> Categories
-  </a>
+
+  <div class="mobile-nav__dropdown">
+    <div class="mobile-nav__dropdown-header">
+      <a href="index.html" class="mobile-nav__link">
+        <i class="fas fa-map-marker-alt"></i> Destinations
+      </a>
+      <button class="mobile-nav__chevron" aria-label="Toggle destinations">
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="mobile-nav__dropdown-menu">
+      <a href="manali.html" class="mobile-nav__dropdown-item">Manali</a>
+      <a href="ladakh.html" class="mobile-nav__dropdown-item">Ladakh</a>
+      <a href="bali.html" class="mobile-nav__dropdown-item">Bali</a>
+      <a href="maldives.html" class="mobile-nav__dropdown-item">Maldives</a>
+      <a href="goa.html" class="mobile-nav__dropdown-item">Goa</a>
+      <a href="kerala.html" class="mobile-nav__dropdown-item">Kerala</a>
+      <a href="rajasthan.html" class="mobile-nav__dropdown-item">Rajasthan</a>
+      <a href="thailand.html" class="mobile-nav__dropdown-item">Thailand</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav__dropdown">
+    <div class="mobile-nav__dropdown-header">
+      <a href="../category/index.html" class="mobile-nav__link">
+        <i class="fas fa-th-large"></i> Categories
+      </a>
+      <button class="mobile-nav__chevron" aria-label="Toggle categories">
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="mobile-nav__dropdown-menu">
+      <a href="../holiday-packages.html" class="mobile-nav__dropdown-item">Holiday Packages</a>
+      <a href="../honeymoon-packages.html" class="mobile-nav__dropdown-item">Honeymoon Packages</a>
+      <a href="../pilgrimage-tours.html" class="mobile-nav__dropdown-item">Pilgrimage Tours</a>
+      <a href="../adventure-tours.html" class="mobile-nav__dropdown-item">Adventure Tours</a>
+      <a href="../customised-packages.html" class="mobile-nav__dropdown-item">Customised Packages</a>
+    </div>
+  </div>
+
   <a href="../index.html#about" class="mobile-nav__link">
     <i class="fas fa-info-circle"></i> About Us
   </a>
@@ -117,6 +172,23 @@
       }
     });
   }
+
+  // Mobile dropdown chevron toggles
+  document.querySelectorAll('.mobile-nav__chevron').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdown = this.closest('.mobile-nav__dropdown');
+      const isOpen = dropdown.classList.toggle('open');
+      this.querySelector('i').style.transform = isOpen ? 'rotate(180deg)' : '';
+      document.querySelectorAll('.mobile-nav__dropdown').forEach(d => {
+        if (d !== dropdown) {
+          d.classList.remove('open');
+          d.querySelector('.mobile-nav__chevron i').style.transform = '';
+        }
+      });
+    });
+  });
+
 </script>
 </body>
 </html>

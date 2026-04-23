@@ -178,12 +178,11 @@
 
 /* Search Box Component - Global Styles */
 .search-box {
+  background: #fff;
+  border-radius: 30px;
+  padding: 5px 15px;
   display: flex;
   align-items: center;
-  background-color: var(--color-light-bg);
-  border-radius: var(--radius-full);
-  padding: var(--spacing-1) var(--spacing-4);
-  gap: var(--spacing-2);
   flex: 1;
   max-width: 300px;
 }
@@ -191,33 +190,405 @@
 .search-box input {
   border: none;
   outline: none;
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: 10px;
   flex: 1;
   background-color: transparent;
-  color: var(--color-text-dark);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
+  color: #1c1d22;
+  font-weight: 600;
 }
 
 .search-box input::placeholder {
-  color: var(--color-text-muted-dark);
+  color: #555;
 }
 
 .search-box i {
-  color: var(--color-text-dark);
-  margin-left: var(--spacing-2);
+  color: #1c1d22;
+  margin-left: 8px;
 }
 
-/* Autofill styling for browsers */
-.search-box input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px var(--color-light-bg) inset !important;
-  -webkit-text-fill-color: var(--color-text-dark) !important;
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #1c1d22 !important;
 }
 
-/* Responsive: Full width on mobile */
+/* ============================================================
+   HEADER & NAVIGATION — shared across all pages
+   ============================================================ */
+
+/* Top Bar */
+.top-bar {
+  background-color: #c1121f;
+  color: white;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.top-bar .left,
+.top-bar .right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-bar a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background-color: #1c1d22;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Navigation */
+.header__nav,
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #ffffff;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  color: #c1121f;
+}
+
+/* Desktop Dropdown */
+.nav__dropdown {
+  position: relative;
+}
+
+.nav__dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav__dropdown-toggle:hover {
+  color: #c1121f;
+}
+
+.nav__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1c1d22;
+  border: 1px solid rgba(193, 18, 31, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.nav__dropdown:hover .nav__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav__dropdown-item {
+  display: block;
+  padding: 9px 14px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav__dropdown-item:hover {
+  background-color: rgba(193, 18, 31, 0.1);
+  color: #c1121f;
+}
+
+.nav__dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger-menu,
+.header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.hamburger-menu:hover,
+.header__hamburger:hover {
+  background: rgba(193, 18, 31, 0.2);
+  color: #c1121f;
+}
+
+/* WhatsApp floating button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+/* Mobile nav panel — hidden on desktop */
+.mobile-nav {
+  display: none;
+}
+
+@keyframes mobileNavSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   MOBILE STYLES — shared across all pages
+   ============================================================ */
+
 @media (max-width: 768px) {
+  /* Top bar */
+  .top-bar {
+    font-size: 12px;
+    padding: 6px 14px;
+    gap: 4px;
+  }
+
+  .top-bar .left,
+  .top-bar .right {
+    gap: 10px;
+  }
+
+  .top-bar .left span,
+  .top-bar .left a span {
+    display: none;
+  }
+
+  /* Header: logo left | hamburger right | search below */
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 0;
+  }
+
+  .logo {
+    flex: 1;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .logo img {
+    height: 28px;
+    width: auto;
+  }
+
+  .logo__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .search-box {
-    max-width: none;
+    order: 3;
+    flex: 0 0 100%;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+
+  .search-box input {
     width: 100%;
+  }
+
+  .header__nav {
+    order: 2;
+  }
+
+  /* Show hamburger, hide nav links + desktop dropdowns */
+  .hamburger-menu,
+  .header__hamburger {
+    display: block;
+  }
+
+  .header__nav .nav__link,
+  .header__nav .nav__dropdown {
+    display: none;
+  }
+
+  .header__nav .hamburger-menu,
+  .header__nav .header__hamburger {
+    display: block;
+  }
+
+  /* Mobile nav panel */
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #1c1d22;
+    border-top: 2px solid #c1121f;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 999;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+    animation: mobileNavSlideDown 0.25s ease;
+  }
+
+  .mobile-nav__link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 28px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .mobile-nav__link:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav__link i {
+    width: 20px;
+    color: #c1121f;
+    font-size: 16px;
+  }
+
+  .mobile-nav__link:hover {
+    background: rgba(193, 18, 31, 0.12);
+    color: #c1121f;
+  }
+
+  /* Mobile dropdown */
+  .mobile-nav__dropdown {
+    width: 100%;
+  }
+
+  /* Row that holds the nav link + chevron button side by side */
+  .mobile-nav__dropdown-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* The link inside the header takes all space except the chevron */
+  .mobile-nav__dropdown-header .mobile-nav__link {
+    flex: 1;
+    border-bottom: none;
+  }
+
+  /* Chevron toggle button */
+  .mobile-nav__chevron {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav__chevron i {
+    transition: transform 0.25s ease;
+    width: auto;
+  }
+
+  .mobile-nav__chevron:hover {
+    color: #c1121f;
+  }
+
+  .mobile-nav__dropdown-menu {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #c1121f;
+    width: 100%;
+  }
+
+  .mobile-nav__dropdown.open .mobile-nav__dropdown-menu {
+    display: block;
+  }
+
+  .mobile-nav__dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 10px;
+    padding: 11px 20px 11px 48px;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s, color 0.2s;
+    width: 100%;
+  }
+
+  .mobile-nav__dropdown-item:hover {
+    background: rgba(193, 18, 31, 0.08);
+    color: #c1121f;
+  }
+
+  .mobile-nav__dropdown-item:last-child {
+    border-bottom: none;
   }
 }
