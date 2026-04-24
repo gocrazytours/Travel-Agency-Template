@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Upcoming Tours - Go Crazy Tours</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="tours.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <div class="left">
+      <a href="mailto:info@gocrazytours.com"><i class="fas fa-envelope"></i> info@gocrazytours.com</a>
+    </div>
+    <div class="right">
+      <span>Follow Us:</span>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <a href="../auth/index.html" class="login-btn">Login</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="/public/assets/images/logo/go_crazy_tours_logo_horizontal.png" alt="Go Crazy Tours Logo" />
+      <span class="logo__text">Go Crazy Tours</span>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search for 'Destination'" />
+      <i class="fas fa-search"></i>
+    </div>
+    <nav class="header__nav nav" aria-label="Main navigation">
+      <a href="../../index.html" class="nav__link">Home</a>
+      <div class="nav__dropdown">
+        <a href="../destinations/index.html" class="nav__link nav__dropdown-toggle">Destinations <i class="fas fa-chevron-down"></i></a>
+        <div class="nav__dropdown-menu">
+          <a href="../destinations/manali.html" class="nav__dropdown-item">Manali</a>
+          <a href="../destinations/ladakh.html" class="nav__dropdown-item">Ladakh</a>
+          <a href="../destinations/bali.html" class="nav__dropdown-item">Bali</a>
+          <a href="../destinations/maldives.html" class="nav__dropdown-item">Maldives</a>
+          <a href="../destinations/goa.html" class="nav__dropdown-item">Goa</a>
+          <a href="../destinations/kerala.html" class="nav__dropdown-item">Kerala</a>
+          <a href="../destinations/rajasthan.html" class="nav__dropdown-item">Rajasthan</a>
+          <a href="../destinations/thailand.html" class="nav__dropdown-item">Thailand</a>
+        </div>
+      </div>
+      <div class="nav__dropdown">
+        <a href="../../pages/categories/index.html" class="nav__link nav__dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+        <div class="nav__dropdown-menu">
+          <a href="../../pages/categories/holiday-packages.html" class="nav__dropdown-item">Holiday Packages</a>
+          <a href="../../pages/categories/honeymoon-packages.html" class="nav__dropdown-item">Honeymoon Packages</a>
+          <a href="../../pages/categories/pilgrimage-tours.html" class="nav__dropdown-item">Pilgrimage Tours</a>
+          <a href="../../pages/categories/adventure-tours.html" class="nav__dropdown-item">Adventure Tours</a>
+          <a href="../../pages/categories/customised-packages.html" class="nav__dropdown-item">Customised Packages</a>
+        </div>
+      </div>
+      <a href="#about" class="nav__link">About Us</a>
+      <button type="button" class="header__hamburger hamburger-menu" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="../../index.html" class="mobile-nav__link">
+    <i class="fas fa-home"></i> Home
+  </a>
+
+  <div class="mobile-nav__dropdown">
+    <div class="mobile-nav__dropdown-header">
+      <a href="../destinations/index.html" class="mobile-nav__link">
+        <i class="fas fa-map-marker-alt"></i> Destinations
+      </a>
+      <button class="mobile-nav__chevron" aria-label="Toggle destinations">
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="mobile-nav__dropdown-menu">
+      <a href="../destinations/manali.html" class="mobile-nav__dropdown-item">Manali</a>
+      <a href="../destinations/ladakh.html" class="mobile-nav__dropdown-item">Ladakh</a>
+      <a href="../destinations/bali.html" class="mobile-nav__dropdown-item">Bali</a>
+      <a href="../destinations/maldives.html" class="mobile-nav__dropdown-item">Maldives</a>
+      <a href="../destinations/goa.html" class="mobile-nav__dropdown-item">Goa</a>
+      <a href="../destinations/kerala.html" class="mobile-nav__dropdown-item">Kerala</a>
+      <a href="../destinations/rajasthan.html" class="mobile-nav__dropdown-item">Rajasthan</a>
+      <a href="../destinations/thailand.html" class="mobile-nav__dropdown-item">Thailand</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav__dropdown">
+    <div class="mobile-nav__dropdown-header">
+      <a href="../../pages/categories/index.html" class="mobile-nav__link">
+        <i class="fas fa-th-large"></i> Categories
+      </a>
+      <button class="mobile-nav__chevron" aria-label="Toggle categories">
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div class="mobile-nav__dropdown-menu">
+      <a href="../../pages/categories/holiday-packages.html" class="mobile-nav__dropdown-item">Holiday Packages</a>
+      <a href="../../pages/categories/honeymoon-packages.html" class="mobile-nav__dropdown-item">Honeymoon Packages</a>
+      <a href="../../pages/categories/pilgrimage-tours.html" class="mobile-nav__dropdown-item">Pilgrimage Tours</a>
+      <a href="../../pages/categories/adventure-tours.html" class="mobile-nav__dropdown-item">Adventure Tours</a>
+      <a href="../../pages/categories/customised-packages.html" class="mobile-nav__dropdown-item">Customised Packages</a>
+    </div>
+  </div>
+
+  <a href="#about" class="mobile-nav__link">
+    <i class="fas fa-info-circle"></i> About Us
+  </a>
+</div>
+
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <h1>All Upcoming Tours</h1>
+    <p>Discover all our exciting upcoming tour packages and book your next adventure</p>
+  </div>
+</section>
+
+<!-- All Upcoming Tours Section -->
+<section class="all-upcoming-tours">
+  <div class="container">
+    <div class="tour-cards">
+
+      <!-- Card 1: Thailand -->
+      <div class="tour-card">
+        <img src="https://i.ibb.co/VW1Sx9p7/pexels-erik-karits-2093459-3732494.jpg" alt="Thailand" />
+        <div class="tour-info">
+          <h4>Thailand</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Bengaluru – Thailand</p>
+          <p><i class="fas fa-clock"></i> 5 Days / 4 Nights</p>
+          <p class="price"><s>₹56,999</s> ₹54,999<span>/pp</span></p>
+          <span class="seats">10 Seats Left / 32</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://wa.me/9177956442XXX" class="btn call"><i class="fas fa-phone-alt"></i> Call</a>
+          <a href="#" class="btn view">View More</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Kudremukh Trek -->
+      <div class="tour-card">
+        <img src="https://i.ibb.co/TDQDzf3Y/pexels-taosif-jamal-424987993-15172763.jpg" alt="NISHANI MOTTE Trek" />
+        <div class="tour-info">
+          <h4>Kudremukh Trek</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Near Kalasa – Karnataka</p>
+          <p><i class="fas fa-clock"></i> 2 Days / 1 Night</p>
+          <p class="price"><s>₹5,999</s> ₹4,499<span>/pp</span></p>
+          <span class="seats">10 Seats Left / 30</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://wa.me/9177956442XXX" class="btn call"><i class="fas fa-phone-alt"></i> Call</a>
+          <a href="#" class="btn view">View More</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Kerala Backwaters -->
+      <div class="tour-card">
+        <img src="https://i.ibb.co/7X8f7Z8/pexels-kerala-backwaters.jpg" alt="Kerala Backwaters" />
+        <div class="tour-info">
+          <h4>Kerala Backwaters</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Kochi – Kerala</p>
+          <p><i class="fas fa-clock"></i> 4 Days / 3 Nights</p>
+          <p class="price"><s>₹24,999</s> ₹22,999<span>/pp</span></p>
+          <span class="seats">8 Seats Left / 25</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://wa.me/9177956442XXX" class="btn call"><i class="fas fa-phone-alt"></i> Call</a>
+          <a href="#" class="btn view">View More</a>
+        </div>
+      </div>
+
+      <!-- Card 4: Goa Beach Holiday -->
+      <div class="tour-card">
+        <img src="https://i.ibb.co/9pN7fLk/pexels-goa-beach.jpg" alt="Goa Beach Holiday" />
+        <div class="tour-info">
+          <h4>Goa Beach Holiday</h4>
+          <p><i class="fas fa-map-marker-alt"></i> North Goa</p>
+          <p><i class="fas fa-clock"></i> 3 Days / 2 Nights</p>
+          <p class="price"><s>₹18,999</s> ₹16,999<span>/pp</span></p>
+          <span class="seats">12 Seats Left / 20</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://wa.me/9177956442XXX" class="btn call"><i class="fas fa-phone-alt"></i> Call</a>
+          <a href="#" class="btn view">View More</a>
+        </div>
+      </div>
+
+      <!-- Card 5: Rajasthan Desert Safari -->
+      <div class="tour-card">
+        <img src="https://i.ibb.co/4N8f9Lp/pexels-rajasthan-desert.jpg" alt="Rajasthan Desert Safari" />
+        <div class="tour-info">
+          <h4>Rajasthan Desert Safari</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Jaisalmer – Rajasthan</p>
+          <p><i class="fas fa-clock"></i> 6 Days / 5 Nights</p>
+          <p class="price"><s>₹35,999</s> ₹32,999<span>/pp</span></p>
+          <span class="seats">6 Seats Left / 15</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://wa.me/9177956442XXX" class="btn call"><i class="fas fa-phone-alt"></i> Call</a>
+          <a href="#" class="btn view">View More</a>
+        </div>
+      </div>
+
+      <!-- Card 6: Himachal Adventure -->
+      <div class="tour-card">
+        <img src="https://i.ibb.co/8gH7fLk/pexels-himachal.jpg" alt="Himachal Adventure" />
+        <div class="tour-info">
+          <h4>Himachal Adventure</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Manali – Himachal Pradesh</p>
+          <p><i class="fas fa-clock"></i> 7 Days / 6 Nights</p>
+          <p class="price"><s>₹42,999</s> ₹39,999<span>/pp</span></p>
+          <span class="seats">4 Seats Left / 12</span>
+        </div>
+        <div class="card-actions">
+          <a href="https://wa.me/9177956442XXX" class="btn call"><i class="fas fa-phone-alt"></i> Call</a>
+          <a href="#" class="btn view">View More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<section class="site-footer" id="about">
+  <hr class="footer-divider" />
+
+  <div class="footer-content">
+    <!-- About Column -->
+    <div class="footer-column">
+      <h4>About Go Crazy Tours</h4>
+      <p class="about-text">
+        We are a tour operator from Bengaluru. We operate treks, domestic tours, international tours, and holiday packages.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><span class="dash">–</span> <a href="../../index.html">Home</a></li>
+        <li><span class="dash">–</span> <a href="../categories/holiday-packages.html">Holiday Packages</a></li>
+        <li><span class="dash">–</span> <a href="../categories/honeymoon-packages.html">Honeymoon Packages</a></li>
+        <li><span class="dash">–</span> <a href="../categories/pilgrimage-tours.html">Pilgrimage Tours</a></li>
+        <li><span class="dash">–</span> <a href="../categories/adventure-tours.html">Adventure Tours</a></li>
+        <li><span class="dash">–</span> <a href="../categories/customised-packages.html">Customised Packages</a></li>
+        <li><span class="dash">–</span> <a href="index.html">Upcoming Tours</a></li>
+      </ul>
+    </div>
+
+    <!-- Categories -->
+    <div class="footer-column">
+      <h4>Categories</h4>
+      <ul>
+        <li><span class="dash">–</span> <a href="../categories/holiday-packages.html">Holiday Packages</a></li>
+        <li><span class="dash">–</span> <a href="../categories/honeymoon-packages.html">Honeymoon Packages</a></li>
+        <li><span class="dash">–</span> <a href="../categories/pilgrimage-tours.html">Pilgrimage Tours</a></li>
+        <li><span class="dash">–</span> <a href="../categories/adventure-tours.html">Adventure Tours</a></li>
+        <li><span class="dash">–</span> <a href="../categories/customised-packages.html">Customised Packages</a></li>
+      </ul>
+    </div>
+
+    <!-- Destinations -->
+    <div class="footer-column">
+      <h4>Top Destinations</h4>
+      <ul>
+        <li><span class="dash">–</span> <a href="../destinations/manali.html">Manali</a></li>
+        <li><span class="dash">–</span> <a href="../destinations/ladakh.html">Ladakh</a></li>
+        <li><span class="dash">–</span> <a href="../destinations/bali.html">Bali</a></li>
+        <li><span class="dash">–</span> <a href="../destinations/maldives.html">Maldives</a></li>
+        <li><span class="dash">–</span> <a href="../destinations/goa.html">Goa</a></li>
+        <li><span class="dash">–</span> <a href="../destinations/kerala.html">Kerala</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Follow -->
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <ul class="contact-info">
+        <li><a href="tel:+917795644XXX"><i class="fas fa-phone"></i> (+91) 77956 44XXX</a></li>
+        <li><a href="mailto:info@gocrazytours.com"><i class="fas fa-envelope"></i> info@gocrazytours.com</a></li>
+        <li><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</li>
+      </ul>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider and Footer Bottom -->
+<hr class="footer-bottom-divider" />
+
+<div class="footer-bottom">
+  <p>
+    — <span>All Rights Reserved © <a href="https://gocrazytours.com">gocrazytours.com</a></span>
+  </p>
+</div>
+
+<a class="whatsapp-btn" href="https://wa.me/917795644XXX" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.header__hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', function() {
+    mobileNav.classList.toggle('open');
+  });
+
+  // Mobile dropdown toggles
+  const chevrons = document.querySelectorAll('.mobile-nav__chevron');
+  chevrons.forEach(chevron => {
+    chevron.addEventListener('click', function() {
+      const dropdown = this.closest('.mobile-nav__dropdown');
+      const menu = dropdown.querySelector('.mobile-nav__dropdown-menu');
+      const icon = this.querySelector('i');
+
+      menu.classList.toggle('open');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
