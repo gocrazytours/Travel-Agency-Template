@@ -14,7 +14,8 @@
       "featured": true,
       "whatsapp": "917795644XXX",
       "detailUrl": "#",
-      "description": "Experience vibrant culture, temples, and beaches of Thailand."
+      "description": "Experience vibrant culture, temples, and beaches of Thailand.",
+      "categories": ["holiday-packages"]
     },
     {
       "id": "kudremukh-trek",
@@ -30,7 +31,8 @@
       "featured": true,
       "whatsapp": "917795644XXX",
       "detailUrl": "#",
-      "description": "Trek through the dense forests of Kudremukh National Park."
+      "description": "Trek through the dense forests of Kudremukh National Park.",
+      "categories": ["adventure-tours"]
     },
     {
       "id": "kerala-backwaters",
@@ -46,7 +48,8 @@
       "featured": false,
       "whatsapp": "917795644XXX",
       "detailUrl": "#",
-      "description": "Explore the serene backwaters and lush greenery of Kerala."
+      "description": "Explore the serene backwaters and lush greenery of Kerala.",
+      "categories": ["holiday-packages", "honeymoon-packages"]
     },
     {
       "id": "goa-beach-holiday",
@@ -62,7 +65,8 @@
       "featured": false,
       "whatsapp": "917795644XXX",
       "detailUrl": "#",
-      "description": "Sun, sand, and vibrant beaches — the ultimate Goa getaway."
+      "description": "Sun, sand, and vibrant beaches — the ultimate Goa getaway.",
+      "categories": ["holiday-packages", "honeymoon-packages"]
     },
     {
       "id": "rajasthan-desert-safari",
@@ -78,7 +82,8 @@
       "featured": false,
       "whatsapp": "917795644XXX",
       "detailUrl": "#",
-      "description": "Camel rides, forts, and the golden Thar Desert at sunset."
+      "description": "Camel rides, forts, and the golden Thar Desert at sunset.",
+      "categories": ["holiday-packages", "adventure-tours"]
     },
     {
       "id": "himachal-adventure",
@@ -94,7 +99,25 @@
       "featured": false,
       "whatsapp": "917795644XXX",
       "detailUrl": "#",
-      "description": "Snow peaks, river crossings, and adventure sports in Manali."
+      "description": "Snow peaks, river crossings, and adventure sports in Manali.",
+      "categories": ["adventure-tours"]
+    },
+    {
+      "id": "amarnath-yatra",
+      "title": "Amarnath Yatra",
+      "location": "Bengaluru – Jammu – Amarnath",
+      "duration": "7 Days / 6 Nights",
+      "originalPrice": 14500,
+      "currentPrice": 13200,
+      "image": "/public/assets/images/destinations/pilgrimage-temple.jpeg",
+      "tag": "Pilgrimage",
+      "seatsTotal": 40,
+      "seatsLeft": 25,
+      "featured": false,
+      "whatsapp": "917795644XXX",
+      "detailUrl": "#",
+      "description": "Sacred Amarnath Yatra — trek to the holy Shiva shrine in the Himalayas. July 2026 batch.",
+      "categories": ["pilgrimage-tours"]
     }
   ]
 }

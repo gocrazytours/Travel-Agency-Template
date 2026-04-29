@@ -25,3 +25,13 @@ export async function fetchConfig() {
   const data = await loadJSON('config.json');
   return data;
 }
+
+export async function fetchCategories() {
+  const data = await loadJSON('categories.json');
+  return data.categories;
+}
+
+export async function fetchToursByCategory(categoryId) {
+  const tours = await fetchTours();
+  return tours.filter(t => Array.isArray(t.categories) && t.categories.includes(categoryId));
+}
