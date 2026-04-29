@@ -24,7 +24,7 @@ Travel-Agency-Template/
 ├── style.css               ← Home page CSS
 ├── styles/                 ← Shared design system (never edit except variables.css)
 │   ├── variables.css       ← ALL colors, fonts, tokens — single source of truth
-│   ├── components.css      ← Shared header, nav, buttons, WhatsApp button
+│   ├── components.css      ← Shared header, nav, footer, WhatsApp button
 │   └── layout.css          ← Grid helpers
 ├── pages/                  ← Every non-home page lives here
 │   ├── destinations/
@@ -47,9 +47,9 @@ Individual destinations: `pages/destinations/manali.html`, `ladakh.html`, `bali.
 
 Category pages (future): `pages/categories/index.html`, `holiday-packages.html`, `honeymoon-packages.html`, `pilgrimage-tours.html`, `adventure-tours.html`, `customised-packages.html`
 
-### Scaffolded but not migrated
+### Static data placeholders
 
-`src/` contains an older scaffolded structure not wired to any HTML. Ignore it. The authoritative token file is `styles/variables.css`, **not** `src/styles/variables.css`.
+`src/data/` contains `tours.json`, `destinations.json`, and `config.json` as placeholders for a future dynamic/backend implementation. No JavaScript reads them currently.
 
 ---
 
@@ -163,7 +163,7 @@ Infinite circular slider on the home page — implemented by DOM prepend/append 
 
 ## Static Data (not yet wired up)
 
-`src/data/tours.json`, `src/data/destinations.json`, and `src/data/config.json` exist as placeholders for a future dynamic/backend implementation. Currently no JavaScript reads them.
+`src/data/tours.json`, `src/data/destinations.json`, and `src/data/config.json` are placeholders for a future dynamic/backend implementation. Currently no JavaScript reads them.
 
 ---
 
