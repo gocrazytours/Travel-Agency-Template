@@ -1,143 +1,204 @@
-/* ============================================
-   CSS CUSTOM PROPERTIES - DESIGN SYSTEM
-   ============================================ */
+/* ================================================================
+   GO CRAZY TOURS — DESIGN TOKEN REGISTRY
+   ================================================================
+   This is the SINGLE SOURCE OF TRUTH for all fonts and colors.
+   Edit values here → changes apply everywhere automatically.
+   Never hardcode colors or fonts in any other CSS file.
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   FONTS
+   To swap fonts: change the @import URL and the --font-family-*
+   variables below. Both must be updated together.
+   ---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  /* Brand Colors */
-  --color-primary: #c1121f;        /* Brand Red */
-  --color-primary-dark: #8a0a17;   /* Darker red */
-  --color-primary-light: #e63946;  /* Lighter red */
-  
-  /* Neutrals */
-  --color-dark-bg: #1c1d22;         /* Dark background */
-  --color-dark-secondary: #2a2b33;  /* Secondary dark */
-  --color-light-bg: #ffffff;        /* Light background */
-  --color-text-dark: #1c1d22;       /* Dark text */
-  --color-text-light: #ffffff;      /* Light text */
-  --color-text-muted: #999999;      /* Muted text */
-  --color-border: #555555;          /* Border color */
-  
-  /* Semantic Colors */
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-info: #3b82f6;
-  
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #c1121f 0%, #e63946 100%);
-  --gradient-dark: linear-gradient(135deg, #1c1d22 0%, #2a2b33 100%);
-  
-  /* Typography */
-  --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-family-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-family-mono: 'Courier New', monospace;
-  
-  /* Font Sizes */
-  --font-size-xs: 0.75rem;      /* 12px */
-  --font-size-sm: 0.875rem;     /* 14px */
-  --font-size-base: 1rem;       /* 16px */
-  --font-size-lg: 1.125rem;     /* 18px */
-  --font-size-xl: 1.25rem;      /* 20px */
-  --font-size-2xl: 1.5rem;      /* 24px */
-  --font-size-3xl: 1.875rem;    /* 30px */
-  --font-size-4xl: 2.25rem;     /* 36px */
-  --font-size-5xl: 3rem;        /* 48px */
-  
-  /* Font Weights */
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  
-  /* Line Heights */
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-  --line-height-loose: 2;
-  
-  /* Spacing Scale (8px base) */
-  --spacing-0: 0;
-  --spacing-1: 0.25rem;    /* 4px */
-  --spacing-2: 0.5rem;     /* 8px */
-  --spacing-3: 0.75rem;    /* 12px */
-  --spacing-4: 1rem;       /* 16px */
-  --spacing-5: 1.25rem;    /* 20px */
-  --spacing-6: 1.5rem;     /* 24px */
-  --spacing-8: 2rem;       /* 32px */
-  --spacing-10: 2.5rem;    /* 40px */
-  --spacing-12: 3rem;      /* 48px */
-  --spacing-16: 4rem;      /* 64px */
-  --spacing-20: 5rem;      /* 80px */
-  --spacing-24: 6rem;      /* 96px */
-  --spacing-32: 8rem;      /* 128px */
-  
-  /* Border Radius */
-  --radius-none: 0;
-  --radius-sm: 0.25rem;    /* 4px */
-  --radius-base: 0.5rem;   /* 8px */
-  --radius-md: 0.75rem;    /* 12px */
-  --radius-lg: 1rem;       /* 16px */
-  --radius-xl: 1.5rem;     /* 24px */
-  --radius-2xl: 2rem;      /* 32px */
-  --radius-full: 9999px;   /* Pill shape */
-  
-  /* Shadows */
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  
-  /* Z-Index Scale */
+  --font-brand:    'Fredoka One', cursive;   /* Logo, hero title, section headings */
+  --font-body:     'Nunito', sans-serif;     /* All body text, nav, buttons, cards  */
+}
+
+
+/* ----------------------------------------------------------------
+   CORE BRAND COLORS
+   The three colors from the Go Crazy Tours logo.
+   ---------------------------------------------------------------- */
+:root {
+  /* Blue — used for: top bar, info links, prices, call buttons */
+  --blue:           #1A9FD4;
+  --blue-dark:      #1480B0;
+  --blue-light:     #2BBAEF;
+
+  /* Green — used for: ALL call-to-action buttons, highlights, "go" feel */
+  --green:          #8DC63F;
+  --green-dark:     #72A432;
+  --green-light:    #A5D961;
+
+  /* Navy — used for: headings, footer background, authoritative text */
+  --navy:           #1A3F70;
+  --navy-light:     #2A5298;
+}
+
+
+/* ----------------------------------------------------------------
+   BACKGROUNDS
+   ---------------------------------------------------------------- */
+:root {
+  --bg-page:          #FFFFFF;        /* Main page background              */
+  --bg-card:          #FFFFFF;        /* Cards, modals, dropdowns          */
+  --bg-header:        #FFFFFF;        /* Site header                       */
+  --bg-topbar:        var(--blue);    /* Top announcement bar              */
+  --bg-mobile-nav:    var(--navy);    /* Mobile slide-out nav              */
+  --bg-footer:        var(--navy);    /* Footer background                 */
+  --bg-footer-bottom: rgba(15, 35, 70, 0.70);  /* Copyright strip         */
+  --bg-section-green: #F0F9F0;        /* Alternating section (green tint)  */
+  --bg-section-blue:  #EBF7FD;        /* Alternating section (blue tint)   */
+  --bg-badge-seats:   #E8F9EF;        /* "Seats remaining" badge           */
+  --bg-hero-overlay:  rgba(26, 63, 112, 0.78);  /* Hero image overlay     */
+}
+
+
+/* ----------------------------------------------------------------
+   TEXT COLORS
+   ---------------------------------------------------------------- */
+:root {
+  --text-heading:       var(--navy);   /* All h1–h4 on white backgrounds    */
+  --text-body:          #2C3E50;       /* Paragraph and general body text   */
+  --text-muted:         #6B7280;       /* Secondary/supporting text         */
+  --text-placeholder:   #9CA3AF;       /* Form input placeholder text       */
+  --text-light:         #FFFFFF;       /* Text on dark/colored backgrounds  */
+  --text-light-muted:   rgba(255, 255, 255, 0.85); /* Subtle text on colored bg */
+  --text-hero-subtitle: #D4E8F5;       /* Hero section paragraph            */
+  --text-footer:        #C8DCF0;       /* Footer body text                  */
+  --text-footer-muted:  #A8C4DE;       /* Footer secondary/copyright text   */
+  --text-badge-seats:   #2E7D32;       /* "Seats remaining" badge text      */
+}
+
+
+/* ----------------------------------------------------------------
+   BORDERS
+   ---------------------------------------------------------------- */
+:root {
+  --border-default:    #E2EAF0;   /* General dividers, form outlines       */
+  --border-card:       #E8F4EA;   /* Tour & destination card borders       */
+  --border-feature:    #D4EDD4;   /* "Why Choose Us" feature item borders  */
+  --border-input:      #C9E4F0;   /* Contact form input borders            */
+  --border-dropdown:   #F0F4F0;   /* Dropdown item separators              */
+  --border-header:     var(--green);  /* Green line under header           */
+  --border-footer-top: var(--green);  /* Green line above footer           */
+  --border-footer-mid: rgba(255, 255, 255, 0.12); /* Footer section divider */
+  --border-mobile-nav: var(--green);  /* Top border of mobile nav panel    */
+}
+
+
+/* ----------------------------------------------------------------
+   TRANSPARENCY VARIANTS
+   Pre-defined rgba values for shadows, glows, overlays, and hovers.
+   Use these instead of writing rgba() values manually.
+   ---------------------------------------------------------------- */
+:root {
+  /* Green transparencies */
+  --green-alpha-12:  rgba(141, 198, 63, 0.12);  /* Subtle hover tint       */
+  --green-alpha-15:  rgba(141, 198, 63, 0.15);  /* Focus ring, soft hover  */
+  --green-alpha-20:  rgba(141, 198, 63, 0.20);  /* WhatsApp button shadow  */
+  --green-alpha-30:  rgba(141, 198, 63, 0.30);  /* Hero border, btn shadow */
+  --green-alpha-90:  rgba(141, 198, 63, 0.90);  /* Slider arrow background */
+  --green-glow-sm:   rgba(141, 198, 63, 0.20);  /* Light glow on cards     */
+  --green-glow-md:   rgba(141, 198, 63, 0.35);  /* Feature item hover glow */
+  --green-glow-lg:   rgba(141, 198, 63, 0.50);  /* Active/animated glow    */
+
+  /* Blue transparencies */
+  --blue-alpha-30:   rgba(26, 159, 212, 0.30);  /* Dropdown border tint    */
+
+  /* Navy transparencies */
+  --navy-alpha-06:   rgba(26, 63, 112, 0.06);   /* Feature item shadow     */
+  --navy-alpha-08:   rgba(26, 63, 112, 0.08);   /* Header drop shadow      */
+  --navy-alpha-10:   rgba(26, 63, 112, 0.10);   /* Card shadow             */
+  --navy-alpha-12:   rgba(26, 63, 112, 0.12);   /* Dropdown shadow         */
+  --navy-alpha-15:   rgba(26, 63, 112, 0.15);   /* Card hover shadow       */
+  --navy-alpha-30:   rgba(26, 63, 112, 0.30);   /* Mobile nav shadow       */
+
+  /* White transparencies */
+  --white-alpha-06:  rgba(255, 255, 255, 0.06);  /* Mobile dropdown bg     */
+  --white-alpha-10:  rgba(255, 255, 255, 0.10);  /* Mobile nav separator   */
+}
+
+
+/* ----------------------------------------------------------------
+   SEMANTIC / SPECIAL COLORS
+   ---------------------------------------------------------------- */
+:root {
+  --color-whatsapp:        #25D366;
+  --color-whatsapp-shadow: rgba(37, 211, 102, 0.40);
+  --color-success:         #28a745;
+  --color-warning:         #ffc107;
+  --color-error:           #dc3545;
+  --color-info:            #17a2b8;
+}
+
+
+/* ----------------------------------------------------------------
+   SPACING (8px base scale — do not change unless redesigning layout)
+   ---------------------------------------------------------------- */
+:root {
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.50rem;   /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1.00rem;   /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.50rem;   /* 24px */
+  --space-8:  2.00rem;   /* 32px */
+  --space-10: 2.50rem;   /* 40px */
+  --space-12: 3.00rem;   /* 48px */
+  --space-16: 4.00rem;   /* 64px */
+}
+
+
+/* ----------------------------------------------------------------
+   BORDER RADIUS
+   ---------------------------------------------------------------- */
+:root {
+  --radius-sm:   0.25rem;   /*  4px — tags, small chips   */
+  --radius-md:   0.50rem;   /*  8px — buttons, inputs     */
+  --radius-lg:   0.875rem;  /* 14px — cards               */
+  --radius-xl:   1.00rem;   /* 16px — login container     */
+  --radius-full: 9999px;    /* pill shapes, avatars       */
+}
+
+
+/* ----------------------------------------------------------------
+   FONT SIZES
+   ---------------------------------------------------------------- */
+:root {
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  2rem;      /* 32px */
+  --text-4xl:  3rem;      /* 48px */
+}
+
+
+/* ----------------------------------------------------------------
+   TRANSITIONS
+   ---------------------------------------------------------------- */
+:root {
+  --transition-fast:   150ms ease-in-out;
+  --transition-base:   250ms ease-in-out;
+  --transition-slow:   350ms ease-in-out;
+}
+
+
+/* ----------------------------------------------------------------
+   Z-INDEX SCALE
+   ---------------------------------------------------------------- */
+:root {
   --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-fixed: 1030;
-  --z-modal-backdrop: 1040;
-  --z-modal: 1050;
-  --z-tooltip: 1070;
-  
-  /* Transitions & Durations */
-  --transition-duration-fast: 150ms;
-  --transition-duration-base: 250ms;
-  --transition-duration-slow: 350ms;
-  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-timing-ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --transition-timing-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  
-  /* Breakpoints (Mobile First) */
-  --breakpoint-sm: 640px;   /* 640px and up */
-  --breakpoint-md: 768px;   /* 768px and up */
-  --breakpoint-lg: 1024px;  /* 1024px and up */
-  --breakpoint-xl: 1280px;  /* 1280px and up */
-  --breakpoint-2xl: 1536px; /* 1536px and up */
-  
-  /* Container Queries */
-  --container-max-width: 1200px;
-  --container-padding: var(--spacing-6);
-  --container-padding-sm: var(--spacing-4);
-  
-  /* Opacity */
-  --opacity-disabled: 0.5;
-  --opacity-hover: 0.8;
-  --opacity-focus: 0.9;
-}
-
-/* Dark Mode (optional for future) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Colors remain same for now - can be customized for true dark mode */
-  }
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: more) {
-  :root {
-    --color-primary: #8a0a17;
-    --color-primary-light: #c1121f;
-    --color-border: #333333;
-  }
+  --z-sticky:   1020;
+  --z-fixed:    1030;
+  --z-modal:    1050;
+  --z-tooltip:  1070;
 }

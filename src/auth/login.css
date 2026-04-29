@@ -1,0 +1,127 @@
+/* ================================================================
+   LOGIN PAGE STYLES
+   All values reference variables.css tokens. No hardcoded colors.
+   ================================================================ */
+@import url('../styles/variables.css');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--bg-section-green) 0%, var(--bg-section-blue) 100%);
+  color: var(--text-body);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-container {
+  background-color: var(--bg-card);
+  padding: 36px 40px;
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 40px var(--navy-alpha-12);
+  border: 1px solid var(--border-default);
+}
+
+.tab-buttons {
+  display: flex;
+  margin-bottom: 24px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--green);
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 12px 0;
+  background: var(--bg-card);
+  color: var(--navy);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-base);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.tab-buttons button.active,
+.tab-buttons button:hover {
+  background: var(--green);
+  color: var(--text-light);
+}
+
+form { display: none; flex-direction: column; }
+form.active { display: flex; }
+
+.form-group { margin-bottom: var(--space-4); display: flex; flex-direction: column; }
+
+label {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-input);
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--green-alpha-15);
+}
+
+button[type="submit"] {
+  background-color: var(--green);
+  color: var(--text-light);
+  padding: 13px 0;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: background-color var(--transition-base), transform var(--transition-fast);
+  box-shadow: 0 4px 14px var(--green-alpha-30);
+  margin-top: var(--space-2);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.signup-link {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.signup-link a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.signup-link a:hover { color: var(--green); text-decoration: underline; }
+
+.message { color: var(--green-dark); text-align: center; margin-top: var(--space-3); font-weight: 600; }

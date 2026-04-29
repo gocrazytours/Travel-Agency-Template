@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Go Crazy Tours</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>WELCOME TO GO CRAZY TOURS</h2>
+      <h1>Discover, Explore, and Travel Smarter with Us!</h1>
+      <p>Explore breathtaking destinations at unbeatable prices. Book now and make unforgettable memories without breaking the bank!</p>
+    </div>
+    <div class="hero-search-wrapper">
+      <div class="hero-search">
+        <input type="text" placeholder="Search for 'Destination'" />
+        <button>Search Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Slider -->
+  <section class="trip-options">
+    <div class="slider-container">
+      <div class="slider-wrapper">
+        <a href="/src/pages/categories/holiday-packages.html" class="trip-card">
+          <img src="../public/assets/images/destinations/holiday-tour.jpeg" alt="Holiday Packages" />
+          <div class="trip-label">Holiday Packages <i class="fas fa-arrow-circle-right"></i></div>
+        </a>
+        <a href="/src/pages/categories/honeymoon-packages.html" class="trip-card">
+          <img src="../public/assets/images/destinations/honeymoon-bridge.jpeg" alt="Honeymoon Packages" />
+          <div class="trip-label">Honeymoon Packages <i class="fas fa-arrow-circle-right"></i></div>
+        </a>
+        <a href="/src/pages/categories/pilgrimage-tours.html" class="trip-card">
+          <img src="../public/assets/images/destinations/pilgrimage-temple.jpeg" alt="Pilgrimage Tours" />
+          <div class="trip-label">Pilgrimage Tours <i class="fas fa-arrow-circle-right"></i></div>
+        </a>
+        <a href="/src/pages/categories/adventure-tours.html" class="trip-card">
+          <img src="../public/assets/images/destinations/adventure-tour.jpeg" alt="Adventure Tours" />
+          <div class="trip-label">Adventure Tours <i class="fas fa-arrow-circle-right"></i></div>
+        </a>
+        <a href="/src/pages/categories/customised-packages.html" class="trip-card">
+          <img src="https://i.ibb.co/MyX5j081/meric-dagli-u-ADXI1v10us-unsplash.jpg" alt="Customised Packages" />
+          <div class="trip-label">Customised Packages <i class="fas fa-arrow-circle-right"></i></div>
+        </a>
+      </div>
+      <button class="slider-btn prev-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-btn next-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Upcoming Tours — populated by home.js -->
+  <section class="upcoming-tours">
+    <div class="section-heading">
+      <h2><span class="highlight-bar"></span>Upcoming Tours</h2>
+      <a href="/src/pages/tours/index.html" class="show-all">Show All <i class="fas fa-arrow-circle-right"></i></a>
+    </div>
+    <div class="tour-cards" id="featured-tours"></div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
+    <div class="section-heading">
+      <h2><span class="highlight-bar"></span>Why Choose Us</h2>
+    </div>
+    <p class="section-description">
+      At Go Crazy Tours, we provide stress-free travel with comfort, safety, and convenience. Here's why travelers choose us:
+    </p>
+    <div class="features-grid">
+      <ul class="features-list left">
+        <li tabindex="0">
+          Competitive Pricing<br />
+          <span>Premium travel experiences at unbeatable prices.</span>
+        </li>
+        <li tabindex="0">
+          Enhanced Security<br />
+          <span>Your safety and privacy are our top priorities.</span>
+        </li>
+      </ul>
+      <ul class="features-list right">
+        <li tabindex="0">
+          Quick & Easy Booking<br />
+          <span>Seamlessly plan your next adventure with our user-friendly platform.</span>
+        </li>
+        <li tabindex="0">
+          24/7 Travel Alerts<br />
+          <span>Receive round-the-clock updates and support wherever you go.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
+    <div class="section-heading">
+      <h2><span class="highlight-bar"></span>Get in Touch</h2>
+    </div>
+    <p class="contact-description">
+      We'd love to hear from you! Whether you have questions, feedback, or you're ready to start your adventure, reach out to us below.
+    </p>
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+      </div>
+      <input type="text" placeholder="Subject" class="full-width" required />
+      <textarea placeholder="Your Message" rows="5" class="full-width" required></textarea>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="js/pages/home.js"></script>
+</body>
+</html>
