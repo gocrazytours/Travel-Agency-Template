@@ -2,7 +2,7 @@
    LOGIN PAGE STYLES
    All values reference variables.css tokens. No hardcoded colors.
    ================================================================ */
-@import url('../../styles/variables.css');
+@import url('../styles/variables.css');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 

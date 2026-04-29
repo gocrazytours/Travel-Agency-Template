@@ -43,6 +43,9 @@ main {
 }
 
 .destination-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   background-color: var(--bg-card);
   border-radius: var(--radius-lg);
   overflow: hidden;

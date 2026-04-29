@@ -9,7 +9,10 @@ Go Crazy Tours is a **static HTML/CSS/JS** travel agency website — no build to
 ## Running the Site
 
 ```bash
-python -m http.server 8080   # or: npx serve .
+# Serve from src/ so index.html is the default page
+cd src && python -m http.server 8080
+# or from repo root:
+npx serve src
 ```
 
 No build step, no `npm install`, no dev server required.
@@ -20,60 +23,72 @@ No build step, no `npm install`, no dev server required.
 
 ```
 Travel-Agency-Template/
-├── index.html              ← Home page
-├── style.css               ← Home page CSS
-├── styles/                 ← Shared design system (never edit except variables.css)
-│   ├── variables.css       ← ALL colors, fonts, tokens — single source of truth
-│   ├── components.css      ← Shared header, nav, footer, WhatsApp button
-│   └── layout.css          ← Grid helpers
-├── pages/                  ← Every non-home page lives here
-│   ├── destinations/
-│   │   ├── index.html      ← Destinations listing
-│   │   ├── destinations.css
-│   │   └── rajasthan.html  ← Individual destination (template for others)
-│   ├── tours/
-│   │   ├── index.html      ← All upcoming tours
-│   │   └── tours.css
-│   └── auth/
-│       ├── index.html      ← Login / signup
-│       ├── login.css
-│       └── login.js
-└── public/assets/images/   ← All images (logo/, destinations/, icons/, ui/)
+├── src/                        ← ALL source files live here
+│   ├── index.html              ← Home page
+│   ├── style.css               ← Home page CSS
+│   ├── styles/                 ← Shared design system (never edit except variables.css)
+│   │   ├── variables.css       ← ALL colors, fonts, tokens — single source of truth
+│   │   ├── components.css      ← Shared header, nav, footer, WhatsApp button
+│   │   └── layout.css          ← Grid helpers
+│   ├── pages/                  ← Every non-home page lives here
+│   │   ├── destinations/
+│   │   │   ├── index.html      ← Destinations listing
+│   │   │   ├── destinations.css
+│   │   │   └── rajasthan.html  ← Individual destination (template for others)
+│   │   ├── tours/
+│   │   │   ├── index.html      ← All upcoming tours
+│   │   │   └── tours.css
+│   │   └── categories/         ← (future) category pages
+│   ├── auth/
+│   │   ├── index.html          ← Login / signup
+│   │   ├── login.css
+│   │   └── login.js
+│   ├── components/             ← (future) reusable UI components
+│   ├── js/                     ← (future) JavaScript modules
+│   └── data/                   ← Static JSON data (not yet wired to JS)
+│       ├── tours.json
+│       ├── destinations.json
+│       └── config.json
+├── public/assets/images/       ← All images (logo/, destinations/, icons/, ui/)
+├── docs/                       ← Project documentation
+├── config/                     ← (future) configuration files
+└── dist/                       ← (future) production build output
 ```
 
 ### Navigation links that exist in HTML but have no page yet
 
-Individual destinations: `pages/destinations/manali.html`, `ladakh.html`, `bali.html`, `maldives.html`, `goa.html`, `kerala.html`, `thailand.html`
+Individual destinations: `src/pages/destinations/manali.html`, `ladakh.html`, `bali.html`, `maldives.html`, `goa.html`, `kerala.html`, `thailand.html`
 
-Category pages (future): `pages/categories/index.html`, `holiday-packages.html`, `honeymoon-packages.html`, `pilgrimage-tours.html`, `adventure-tours.html`, `customised-packages.html`
-
-### Static data placeholders
-
-`src/data/` contains `tours.json`, `destinations.json`, and `config.json` as placeholders for a future dynamic/backend implementation. No JavaScript reads them currently.
+Category pages (future): `src/pages/categories/index.html`, `holiday-packages.html`, `honeymoon-packages.html`, `pilgrimage-tours.html`, `adventure-tours.html`, `customised-packages.html`
 
 ---
 
 ## CSS Architecture
 
 ```
-style.css
-  └── @import styles/variables.css       ← tokens
-  └── @import styles/components.css      ← shared components
-  └── @import styles/layout.css
+src/style.css
+  └── @import ./styles/variables.css       ← tokens
+  └── @import ./styles/components.css      ← shared components
+  └── @import ./styles/layout.css
 
-pages/destinations/destinations.css
+src/pages/destinations/destinations.css
   └── @import ../../styles/variables.css
   └── @import ../../styles/components.css
 
-pages/tours/tours.css
+src/pages/tours/tours.css
   └── @import ../../styles/variables.css
   └── @import ../../styles/components.css
 
-pages/auth/login.css
-  └── @import ../../styles/variables.css
+src/auth/login.css
+  └── @import ../styles/variables.css
 ```
 
-**Rule:** Every new page CSS file must start with `@import url('../../styles/variables.css')` and use only token variables — no hardcoded colors or fonts.
+**Depth rule for CSS @import paths (all relative to `src/styles/`):**
+- `src/style.css` → `./styles/variables.css`
+- `src/auth/login.css` → `../styles/variables.css`
+- `src/pages/*/page.css` → `../../styles/variables.css`
+
+**Rule:** Every new page CSS file must reference only token variables — no hardcoded colors or fonts.
 
 **Rule:** No CSS file other than `variables.css` may contain a hardcoded color hex, rgba value, or font name. Always reference a token variable.
 
@@ -117,7 +132,7 @@ Changing any of these three cascades through every usage via the derived tokens 
 | `--green-alpha-*` | rgba variants | Shadows, glows, focus rings |
 | `--navy-alpha-*` | rgba variants | Card shadows, overlays |
 
-Full token list with descriptions is in `styles/variables.css`.
+Full token list with descriptions is in `src/styles/variables.css`.
 
 ---
 
@@ -135,7 +150,7 @@ Chevron toggles for mobile dropdown submenus are handled by inline `<script>` at
 
 ### Category Slider
 
-Infinite circular slider on the home page — implemented by DOM prepend/append on `transitionend`. All logic is in the inline `<script>` block at the bottom of `index.html`.
+Infinite circular slider on the home page — implemented by DOM prepend/append on `transitionend`. All logic is in the inline `<script>` block at the bottom of `src/index.html`.
 
 ### Tour Cards
 
@@ -145,19 +160,19 @@ Infinite circular slider on the home page — implemented by DOM prepend/append 
 
 ## Adding New Pages
 
-**Pattern for every new page:**
-1. Create `pages/<section>/index.html` (or `page-name.html` for sub-pages)
-2. Create `pages/<section>/<section>.css` that starts with:
+**Pattern for every new page under `src/pages/<section>/`:**
+1. Create `src/pages/<section>/index.html`
+2. Create `src/pages/<section>/<section>.css` that starts with:
    ```css
    @import url('../../styles/variables.css');
    @import url('../../styles/components.css');
    ```
-3. Copy the header + mobile nav block from an existing page, update the active link (`nav__link--active`), and fix relative paths (`../../index.html` for home, `../auth/index.html` for login)
+3. Copy the header + mobile nav block from `src/pages/destinations/index.html`, update the active link (`nav__link--active`), keep paths as-is (`../../index.html` for home, `../../auth/index.html` for login)
 4. Add the new page to the nav dropdown in every existing HTML file
 
-**New destination page:** Copy `pages/destinations/rajasthan.html` as a template, save as e.g. `pages/destinations/manali.html`.
+**New destination page:** Copy `src/pages/destinations/rajasthan.html`, save as e.g. `src/pages/destinations/manali.html`.
 
-**New category page:** Create `pages/categories/holiday-packages.html` following the same pattern.
+**New category page:** Create `src/pages/categories/holiday-packages.html` following the same pattern.
 
 ---
 
@@ -177,7 +192,7 @@ Infinite circular slider on the home page — implemented by DOM prepend/append 
 
 ## Code Standards
 
-- **No hardcoded colors or fonts** in any CSS file except `styles/variables.css`.
+- **No hardcoded colors or fonts** in any CSS file except `src/styles/variables.css`.
 - Use BEM naming for components: `tour-card__image`, `nav__link--active`.
 - CSS variable names follow the pattern: `--{category}-{variant}` (e.g. `--green-alpha-30`, `--bg-section-blue`).
-- New CSS files must start with `@import url('.../styles/variables.css')` and use only token variables.
+- New CSS files must `@import` from `src/styles/variables.css` using the correct relative depth and use only token variables.
