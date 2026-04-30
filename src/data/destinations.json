@@ -6,7 +6,7 @@
       "description": "The God's Own Country — Beautiful backwaters, hill stations & beaches.",
       "image": "https://i.ibb.co/jP6NH5bQ/nature-photographer-29ez-CWt-Mtn-M-unsplash.jpg",
       "toursCount": 12,
-      "url": "/src/pages/destinations/kerala.html"
+      "url": "/pages/destinations/kerala.html"
     },
     {
       "id": "manali",
@@ -14,7 +14,7 @@
       "description": "Snow-capped peaks, adventure sports, and serene valleys in Himachal Pradesh.",
       "image": "https://i.ibb.co/fGXQmQg2/The-Best-Adventure-Experiences-in-Manali1-popular.jpg",
       "toursCount": 8,
-      "url": "/src/pages/destinations/manali.html"
+      "url": "/pages/destinations/manali.html"
     },
     {
       "id": "ladakh",
@@ -22,7 +22,7 @@
       "description": "Barren landscapes, Buddhist monasteries, and the world's highest passes.",
       "image": "https://i.ibb.co/TDQDzf3Y/pexels-taosif-jamal-424987993-15172763.jpg",
       "toursCount": 6,
-      "url": "/src/pages/destinations/ladakh.html"
+      "url": "/pages/destinations/ladakh.html"
     },
     {
       "id": "bali",
@@ -30,7 +30,7 @@
       "description": "Tropical paradise with stunning temples, rice terraces, and pristine beaches.",
       "image": "https://i.ibb.co/VW1Sx9p7/pexels-erik-karits-2093459-3732494.jpg",
       "toursCount": 5,
-      "url": "/src/pages/destinations/bali.html"
+      "url": "/pages/destinations/bali.html"
     },
     {
       "id": "maldives",
@@ -38,7 +38,7 @@
       "description": "Crystal-clear lagoons, overwater bungalows, and vibrant coral reefs.",
       "image": "https://i.ibb.co/9pN7fLk/pexels-goa-beach.jpg",
       "toursCount": 4,
-      "url": "/src/pages/destinations/maldives.html"
+      "url": "/pages/destinations/maldives.html"
     },
     {
       "id": "goa",
@@ -46,7 +46,7 @@
       "description": "Sun, sand, and vibrant nightlife — India's most popular beach destination.",
       "image": "https://i.ibb.co/9pN7fLk/pexels-goa-beach.jpg",
       "toursCount": 10,
-      "url": "/src/pages/destinations/goa.html"
+      "url": "/pages/destinations/goa.html"
     },
     {
       "id": "rajasthan",
@@ -54,7 +54,7 @@
       "description": "Land of kings — magnificent forts, palaces, and the golden Thar Desert.",
       "image": "https://i.ibb.co/4N8f9Lp/pexels-rajasthan-desert.jpg",
       "toursCount": 15,
-      "url": "/src/pages/destinations/rajasthan.html"
+      "url": "/pages/destinations/rajasthan.html"
     },
     {
       "id": "thailand",
@@ -62,7 +62,7 @@
       "description": "Ornate temples, exotic wildlife, and world-class cuisine in Southeast Asia.",
       "image": "https://i.ibb.co/VW1Sx9p7/pexels-erik-karits-2093459-3732494.jpg",
       "toursCount": 7,
-      "url": "/src/pages/destinations/thailand.html"
+      "url": "/pages/destinations/thailand.html"
     }
   ]
 }

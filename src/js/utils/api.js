@@ -1,4 +1,4 @@
-const DATA_BASE = '/src/data/';
+const DATA_BASE = '/data/';
 
 async function loadJSON(filename) {
   const res = await fetch(`${DATA_BASE}${filename}`);

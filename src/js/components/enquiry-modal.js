@@ -82,11 +82,8 @@ function buildModalHTML(tours) {
               <label for="m-budget" class="modal__label">Budget</label>
               <select name="budget" id="m-budget">
                 <option value="" disabled selected>Select Budget</option>
-                <option>Under ₹10,000</option>
-                <option>₹10,000 – ₹25,000</option>
-                <option>₹25,000 – ₹50,000</option>
-                <option>₹50,000 – ₹1,00,000</option>
-                <option>Above ₹1,00,000</option>
+                <option>Deluxe</option>
+                <option>Luxury</option>
               </select>
             </div>
           </div>
@@ -174,8 +171,14 @@ function handleSubmit(e) {
   const name   = form.name.value.trim();
   const mobile = form.mobile.value.trim();
 
+  const rawEmail = form.email.value.trim();
+
   if (!name)                    { showError('Please enter your name.');                      return; }
   if (!/^\d{10}$/.test(mobile)) { showError('Please enter a valid 10-digit mobile number.'); return; }
+  if (rawEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(rawEmail)) {
+    showError('Please enter a valid email address (e.g. name@gmail.com).');
+    return;
+  }
 
   const pkg         = form.package.value   || 'Not specified';
   const rawDate     = form.travelDate.value;
@@ -183,7 +186,7 @@ function handleSubmit(e) {
     ? new Date(rawDate).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })
     : 'Not specified';
   const budget      = form.budget.value    || 'Not specified';
-  const email       = form.email.value.trim()  || 'Not provided';
+  const email       = rawEmail || 'Not provided';
   const city        = form.city.value.trim()   || 'Not provided';
   const adults      = form.adults.value    || 'Not specified';
   const requirement = form.requirement.value.trim() || 'None';

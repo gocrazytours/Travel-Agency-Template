@@ -6,7 +6,7 @@
       "subtitle": "Relax, explore, and create memories",
       "description": "Handpicked holiday packages to India's most beautiful destinations. Perfect for families and friend groups looking for a complete vacation experience.",
       "image": "/public/assets/images/destinations/holiday-tour.jpeg",
-      "url": "/src/pages/categories/holiday-packages.html",
+      "url": "/pages/categories/holiday-packages.html",
       "icon": "fas fa-umbrella-beach"
     },
     {
@@ -15,7 +15,7 @@
       "subtitle": "Begin your forever together",
       "description": "Romantic getaways crafted for couples — serene backwaters, pristine beachfronts, and misty hill stations await.",
       "image": "/public/assets/images/destinations/honeymoon-bridge.jpeg",
-      "url": "/src/pages/categories/honeymoon-packages.html",
+      "url": "/pages/categories/honeymoon-packages.html",
       "icon": "fas fa-heart"
     },
     {
@@ -24,7 +24,7 @@
       "subtitle": "A spiritual journey awaits",
       "description": "Guided pilgrimage tours to India's most sacred sites — from Amarnath to Varanasi. Travel with faith and comfort.",
       "image": "/public/assets/images/destinations/pilgrimage-temple.jpeg",
-      "url": "/src/pages/categories/pilgrimage-tours.html",
+      "url": "/pages/categories/pilgrimage-tours.html",
       "icon": "fas fa-pray"
     },
     {
@@ -33,7 +33,7 @@
       "subtitle": "Push your limits",
       "description": "Treks, river crossings, and mountain expeditions for those who crave adrenaline and breathtaking landscapes.",
       "image": "/public/assets/images/destinations/adventure-tour.jpeg",
-      "url": "/src/pages/categories/adventure-tours.html",
+      "url": "/pages/categories/adventure-tours.html",
       "icon": "fas fa-mountain"
     },
     {
@@ -42,7 +42,7 @@
       "subtitle": "Your trip, your way",
       "description": "Tell us your dream destination and budget — we'll craft a perfect itinerary tailored just for you.",
       "image": "https://i.ibb.co/MyX5j081/meric-dagli-u-ADXI1v10us-unsplash.jpg",
-      "url": "/src/pages/categories/customised-packages.html",
+      "url": "/pages/categories/customised-packages.html",
       "icon": "fas fa-sliders-h"
     }
   ]

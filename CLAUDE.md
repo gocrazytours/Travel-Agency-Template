@@ -43,23 +43,34 @@ Travel-Agency-Template/
 │   │   ├── index.html          ← Login / signup
 │   │   ├── login.css
 │   │   └── login.js
-│   ├── components/             ← (future) reusable UI components
-│   ├── js/                     ← (future) JavaScript modules
-│   └── data/                   ← Static JSON data (not yet wired to JS)
-│       ├── tours.json
-│       ├── destinations.json
-│       └── config.json
-├── public/assets/images/       ← All images (logo/, destinations/, icons/, ui/)
-├── docs/                       ← Project documentation
-├── config/                     ← (future) configuration files
-└── dist/                       ← (future) production build output
+│   ├── js/
+│   │   ├── components/
+│   │   │   ├── header.js       ← Injects shared header + nav into #site-header
+│   │   │   ├── footer.js       ← Injects shared footer into #site-footer
+│   │   │   ├── tour-card.js    ← tourCardHTML() factory (no price, Book Now button)
+│   │   │   ├── category-card.js← categoryCardHTML() factory
+│   │   │   └── enquiry-modal.js← WhatsApp enquiry modal (initEnquiryModal / openModal)
+│   │   ├── pages/
+│   │   │   ├── home.js         ← Renders featured tour cards on home page
+│   │   │   ├── tours.js        ← Renders all tours on tours/index.html
+│   │   │   ├── categories.js   ← Renders category cards on categories/index.html
+│   │   │   ├── category-detail.js ← Renders filtered tours (reads body[data-category])
+│   │   │   └── tour-detail.js  ← Header/footer/modal for tour detail pages
+│   │   └── utils/
+│   │       └── api.js          ← fetch wrappers: fetchTours, fetchCategories, etc.
+│   ├── public/assets/images/   ← All images (logo/, destinations/, icons/, ui/)
+│   └── data/
+│       ├── tours.json          ← All tours — JS reads this via fetchTours()
+│       ├── destinations.json   ← Destination data
+│       ├── categories.json     ← Category definitions (id, title, url, image, icon)
+│       └── config.json         ← Site config (name, phone, social links)
+├── netlify.toml                ← publish = "src" (serves src/ as root)
+└── docs/                       ← Project documentation
 ```
 
 ### Navigation links that exist in HTML but have no page yet
 
 Individual destinations: `src/pages/destinations/manali.html`, `ladakh.html`, `bali.html`, `maldives.html`, `goa.html`, `kerala.html`, `thailand.html`
-
-Category pages (future): `src/pages/categories/index.html`, `holiday-packages.html`, `honeymoon-packages.html`, `pilgrimage-tours.html`, `adventure-tours.html`, `customised-packages.html`
 
 ---
 
@@ -154,21 +165,26 @@ Infinite circular slider on the home page — implemented by DOM prepend/append 
 
 ### Tour Cards
 
-`.tour-card` — image, info block (`.tour-info`), two action buttons (`.btn.call` for WhatsApp, `.btn.view` for detail). Hardcoded HTML, no JS templating.
+`.tour-card` — rendered by `tourCardHTML()` in `tour-card.js`. Cards show image, location, duration, seats, and two action buttons: "View Details" (links to `tour.detailUrl`) or "WhatsApp" if no detail page, plus "Book Now" which sets `data-enquire` to the tour title and triggers the global enquiry modal.
+
+### Enquiry Modal
+
+`initEnquiryModal()` injects one modal into `<body>` (idempotent). Any element with `[data-enquire]` opens it via delegated click. The modal sends the filled-in form as a formatted WhatsApp message to `919066983939`. Fields: Travel Date, Package (dropdown from tours.json), Name*, Mobile*, Budget, Email, Departure City, Adults, Requirement.
 
 ---
 
 ## Adding New Pages
 
 **Pattern for every new page under `src/pages/<section>/`:**
-1. Create `src/pages/<section>/index.html`
-2. Create `src/pages/<section>/<section>.css` that starts with:
+1. Create `src/pages/<section>/index.html` with `<div id="site-header"></div>` and `<div id="site-footer"></div>` placeholders.
+2. Create `src/pages/<section>/<section>.css` starting with:
    ```css
    @import url('../../styles/variables.css');
    @import url('../../styles/components.css');
    ```
-3. Copy the header + mobile nav block from `src/pages/destinations/index.html`, update the active link (`nav__link--active`), keep paths as-is (`../../index.html` for home, `../../auth/index.html` for login)
-4. Add the new page to the nav dropdown in every existing HTML file
+3. Add a `<script type="module">` that imports the appropriate page JS (e.g. `../../js/pages/home.js`). The page JS is responsible for calling `renderHeader()`, `renderFooter()`, `initEnquiryModal()`.
+4. Use **absolute paths** for all internal links (`/pages/...`, `/auth/...`, `/index.html`) — never relative paths for navigation.
+5. All absolute paths are root-relative from `src/` (the Netlify publish directory). Do NOT prefix them with `/src/`.
 
 **New destination page:** Copy `src/pages/destinations/rajasthan.html`, save as e.g. `src/pages/destinations/manali.html`.
 
@@ -176,16 +192,10 @@ Infinite circular slider on the home page — implemented by DOM prepend/append 
 
 ---
 
-## Static Data (not yet wired up)
-
-`src/data/tours.json`, `src/data/destinations.json`, and `src/data/config.json` are placeholders for a future dynamic/backend implementation. Currently no JavaScript reads them.
-
----
-
 ## Images
 
-- Logos: `public/assets/images/logo/`
-- Destinations/categories: `public/assets/images/destinations/`
+- All local images: `src/public/assets/images/` (logo/, destinations/, icons/, ui/)
+- Reference in HTML/JS with absolute paths: `/public/assets/images/...`
 - Some images are hotlinked from `i.ibb.co` (ImgBB CDN) — replace with local assets when possible.
 
 ---

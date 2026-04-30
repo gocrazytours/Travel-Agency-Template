@@ -1,19 +1,19 @@
 import { fetchConfig } from '../utils/api.js';
 
 const ROUTES = {
-  home:                  '/src/index.html',
-  tours:                 '/src/pages/tours/index.html',
-  'holiday-packages':    '/src/pages/categories/holiday-packages.html',
-  'honeymoon-packages':  '/src/pages/categories/honeymoon-packages.html',
-  'pilgrimage-tours':    '/src/pages/categories/pilgrimage-tours.html',
-  'adventure-tours':     '/src/pages/categories/adventure-tours.html',
-  'customised-packages': '/src/pages/categories/customised-packages.html',
-  manali:    '/src/pages/destinations/manali.html',
-  ladakh:    '/src/pages/destinations/ladakh.html',
-  bali:      '/src/pages/destinations/bali.html',
-  maldives:  '/src/pages/destinations/maldives.html',
-  goa:       '/src/pages/destinations/goa.html',
-  kerala:    '/src/pages/destinations/kerala.html',
+  home:                  '/index.html',
+  tours:                 '/pages/tours/index.html',
+  'holiday-packages':    '/pages/categories/holiday-packages.html',
+  'honeymoon-packages':  '/pages/categories/honeymoon-packages.html',
+  'pilgrimage-tours':    '/pages/categories/pilgrimage-tours.html',
+  'adventure-tours':     '/pages/categories/adventure-tours.html',
+  'customised-packages': '/pages/categories/customised-packages.html',
+  manali:    '/pages/destinations/manali.html',
+  ladakh:    '/pages/destinations/ladakh.html',
+  bali:      '/pages/destinations/bali.html',
+  maldives:  '/pages/destinations/maldives.html',
+  goa:       '/pages/destinations/goa.html',
+  kerala:    '/pages/destinations/kerala.html',
 };
 
 export async function renderFooter() {
