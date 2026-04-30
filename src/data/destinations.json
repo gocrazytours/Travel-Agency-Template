@@ -20,7 +20,7 @@
       "id": "ladakh",
       "name": "Ladakh",
       "description": "Barren landscapes, Buddhist monasteries, and the world's highest passes.",
-      "image": "https://i.ibb.co/TDQDzf3Y/pexels-taosif-jamal-424987993-15172763.jpg",
+      "image": "/public/assets/images/destinations/ladakh_card.jpg",
       "toursCount": 6,
       "url": "/pages/destinations/ladakh.html"
     },
@@ -36,7 +36,7 @@
       "id": "maldives",
       "name": "Maldives",
       "description": "Crystal-clear lagoons, overwater bungalows, and vibrant coral reefs.",
-      "image": "https://i.ibb.co/9pN7fLk/pexels-goa-beach.jpg",
+      "image": "/public/assets/images/destinations/maldives_card_image.jpg",
       "toursCount": 4,
       "url": "/pages/destinations/maldives.html"
     },
@@ -44,7 +44,7 @@
       "id": "goa",
       "name": "Goa",
       "description": "Sun, sand, and vibrant nightlife — India's most popular beach destination.",
-      "image": "https://i.ibb.co/9pN7fLk/pexels-goa-beach.jpg",
+      "image": "/public/assets/images/destinations/goa_card.jpg",
       "toursCount": 10,
       "url": "/pages/destinations/goa.html"
     },
@@ -52,7 +52,7 @@
       "id": "rajasthan",
       "name": "Rajasthan",
       "description": "Land of kings — magnificent forts, palaces, and the golden Thar Desert.",
-      "image": "https://i.ibb.co/4N8f9Lp/pexels-rajasthan-desert.jpg",
+      "image": "/public/assets/images/destinations/rajasthan_desert-safari.jpg",
       "toursCount": 15,
       "url": "/pages/destinations/rajasthan.html"
     },
