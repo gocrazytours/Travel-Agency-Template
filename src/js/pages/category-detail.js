@@ -3,6 +3,7 @@ import { renderFooter } from '../components/footer.js';
 import { renderTourCards } from '../components/tour-card.js';
 import { fetchCategories, fetchToursByCategory } from '../utils/api.js';
 import { initMobileNav } from '../utils/nav.js';
+import { initEnquiryModal } from '../components/enquiry-modal.js';
 
 async function init() {
   const categoryId = document.body.dataset.category;
@@ -11,6 +12,7 @@ async function init() {
   renderHeader(categoryId);
   await renderFooter();
   initMobileNav();
+  await initEnquiryModal();
 
   try {
     const [categories, tours] = await Promise.all([

@@ -3,11 +3,13 @@ import { renderFooter } from '../components/footer.js';
 import { renderTourCards } from '../components/tour-card.js';
 import { fetchTours } from '../utils/api.js';
 import { initMobileNav } from '../utils/nav.js';
+import { initEnquiryModal } from '../components/enquiry-modal.js';
 
 async function init() {
   renderHeader('tours');
   await renderFooter();
   initMobileNav();
+  await initEnquiryModal();
 
   try {
     const tours = await fetchTours();
