@@ -105,18 +105,18 @@
     {
       "id": "amarnath-yatra",
       "title": "Amarnath Yatra",
-      "location": "Bengaluru – Jammu – Amarnath",
-      "duration": "7 Days / 6 Nights",
-      "originalPrice": 14500,
-      "currentPrice": 13200,
-      "image": "/public/assets/images/destinations/pilgrimage-temple.jpeg",
+      "location": "Srinagar – Pahalgam – Amarnath",
+      "duration": "6 Nights / 7 Days",
+      "originalPrice": 13500,
+      "currentPrice": 12200,
+      "image": "/public/assets/images/destinations/amarnath-yatra.jpg",
       "tag": "Pilgrimage",
-      "seatsTotal": 40,
-      "seatsLeft": 25,
+      "seatsTotal": 10,
+      "seatsLeft": 10,
       "featured": false,
-      "whatsapp": "917795644XXX",
-      "detailUrl": "#",
-      "description": "Sacred Amarnath Yatra — trek to the holy Shiva shrine in the Himalayas. July 2026 batch.",
+      "whatsapp": "919066983939",
+      "detailUrl": "/pages/tours/amarnath-yatra.html",
+      "description": "Sacred trek to Baba Barfani — Sheshnag, Mahagunas Pass, Amarnath Cave Darshan & Dal Lake. July 2026.",
       "categories": ["pilgrimage-tours"]
     }
   ]

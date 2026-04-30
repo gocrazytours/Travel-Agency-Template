@@ -135,6 +135,12 @@
   --color-warning:         #ffc107;
   --color-error:           #dc3545;
   --color-info:            #17a2b8;
+
+  /* Tints for inclusions/exclusions boxes */
+  --bg-success-tint:       rgba(40, 167, 69,  0.08);
+  --border-success-tint:   rgba(40, 167, 69,  0.25);
+  --bg-error-tint:         rgba(220, 53,  69,  0.08);
+  --border-error-tint:     rgba(220, 53,  69,  0.20);
 }
 
 
